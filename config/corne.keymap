@@ -51,10 +51,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &bootloader   &none         &none         &none         &none           &kp LEFT_BRACKET  &kp N7        &kp N8        &kp N9        &kp RIGHT_BRACKET  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp MINUS         &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS           &none
-&none  &trans        &trans        &trans        &trans        &trans          &kp BACKSLASH     &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp SLASH          &none
-                                   &kp LGUI      &trans        &kp SPACE       &kp RET           &kp N0        &kp PERIOD
+&none  &bootloader   &none         &none         &none         &none           &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET     &none
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp SEMICOLON     &mt LEFT_SHIFT NUMBER_4  &mt LEFT_CONTROL N5  &mt LEFT_ALT NUMBER_6  &kp EQUAL             &none
+&none  &trans        &trans        &trans        &trans        &trans          &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
+                                   &kp LGUI      &trans        &kp SPACE       &kp RET           &kp N0                   &kp PERIOD
             >;
         };
 
@@ -66,37 +66,37 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_BRACE    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &none
-&none  &kp COLON       &kp DOLLAR       &kp PERCENT   &kp CARET             &trans             &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
-&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN   &kp HASH              &kp PIPE           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
-                                        &kp LGUI      &trans                &kp SPACE          &kp RET    &trans     &kp RALT
+&none  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE    &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTRK    &kp LPAR   &kp RIGHT_BRACE  &none
+&none  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS           &kp PLUS        &kp DOLLAR       &kp PERCENT  &kp CARET  &kp COLON        &none
+&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE           &kp PIPE        &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp TILDE        &none
+                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp RET         &kp QUESTION     &kp RALT
             >;
         };
 
         Nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &kp C_AC_REDO  &kp C_AC_PASTE  &kp C_AC_COPY  &kp C_AC_CUT  &kp C_AC_UNDO  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp CAPS       &kp LEFT        &kp DOWN       &kp UP_ARROW  &kp RIGHT      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp INS        &kp HOME        &kp PAGE_DOWN  &kp PAGE_UP   &kp END        &trans
-                        &trans  &trans  &trans    &trans         &trans          &trans
+&trans  &sl 1   &trans  &trans  &trans  &trans    &kp C_AL_CALCULATOR  &kp C_AC_PASTE  &kp C_AC_COPY     &kp C_AC_CUT  &kp C_AC_UNDO  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp CAPS             &kp LEFT        &kp DOWN          &kp UP_ARROW  &kp RIGHT      &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp INS              &kp HOME        &kp PAGE_DOWN     &kp PAGE_UP   &kp END        &trans
+                        &trans  &trans  &trans    &trans               &trans          &kp LC(LEFT_GUI)
             >;
         };
 
         media {
             bindings = <
-&trans  &trans  &trans  &trans      &trans            &trans        &trans  &trans    &trans             &trans        &trans    &trans
-&trans  &trans  &trans  &trans      &trans            &trans        &trans  &kp C_RW  &kp C_VOLUME_DOWN  &kp C_VOL_UP  &kp C_FF  &trans
-&trans  &trans  &trans  &trans      &trans            &trans        &trans  &trans    &trans             &trans        &trans    &trans
-                        &kp K_MUTE  &kp K_PLAY_PAUSE  &kp K_STOP    &trans  &trans    &trans
+&trans  &trans        &trans        &trans        &trans              &trans        &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp C_REWIND  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_FAST_FORWARD  &trans        &trans  &none   &none   &none   &none   &trans
+&trans  &trans        &trans        &trans        &trans              &trans        &trans  &trans  &trans  &trans  &trans  &trans
+                                    &kp K_MUTE    &kp K_PLAY_PAUSE    &kp K_STOP    &trans  &trans  &trans
             >;
         };
 
         Fun {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp F12           &kp F7           &kp F8               &kp F9        &kp PRINTSCREEN    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &mt LEFT_GUI F11  &mt LEFT_ALT F4  &mt LEFT_CONTROL F5  &mt LSHFT F6  &kp SCROLLLOCK     &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans  &trans  &trans  &trans  &trans  &trans
+                                           &trans               &trans        &trans             &trans  &trans  &trans
             >;
         };
     };
