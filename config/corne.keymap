@@ -10,12 +10,8 @@
 
 
 / {
-behaviors {
-        mt: {
-            compatible = "zmk,behavior-hold-tap";
-            flavor = "balanced";
-            tapping-term-ms = <200>;
-        };
+&mt {
+    tapping-term-ms = <400>;
 };
 
     keymap {
