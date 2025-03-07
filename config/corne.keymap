@@ -11,14 +11,16 @@
 
 / {
 behaviors {
-        hmt: {
+         hm: homerow-mods {
             compatible = "zmk,behavior-hold-tap";
+            label = "homehow-mods";
             #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
-            quick-tap-ms = <200>;
+            tapping-term-ms = <175>;
+            flavor = "tap-preferred";
+            quick-tap-ms = <125>;
+            global-quick-tap;
             bindings = <&kp>, <&kp>;
-        };
+         };
     };
     
     keymap {
