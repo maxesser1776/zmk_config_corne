@@ -9,7 +9,9 @@
 #include <dt-bindings/zmk/keys.h>
 
 &mt {
-    tapping-term-ms = <1000>;
+    compatible = "zmk, behaviors-hold-tap";
+    flavor = "balanced";
+    tapping-term-ms = <240>;
 };
 
 / {
