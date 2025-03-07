@@ -8,14 +8,17 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
+<<<<<<< HEAD
 &mt {
     compatible = "zmk, behaviors-hold-tap";
     flavor = "balanced";
     tapping-term-ms = <240>;
 };
+=======
+&mt { tapping-term-ms = <1000>; };
+>>>>>>> 41fcfceab08a4cf7b95f33f3dcb4d7b506b9e4db
 
 / {
-
     keymap {
         compatible = "zmk,keymap";
 
@@ -27,11 +30,13 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I           &kp O            &kp P                    &none
-&none  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &mt RCTRL K     &mt RIGHT_ALT L  &mt RIGHT_GUI SEMICOLON  &none
-&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA       &kp DOT          &kp FSLH                 &none
-                                       &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB    &lt 2 ENTER  &lt 4 BACKSPACE    &lt 5 LEFT_WIN
+&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I            &kp O            &kp P                    &none
+&none  &mt LEFT_GUI A  &mt LEFT_ALT S  &mt LCTRL D   &mt LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &mt RCTRL K      &mt RIGHT_ALT L  &mt RIGHT_GUI SEMICOLON  &none
+&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA        &kp DOT          &kp FSLH                 &none
+                                       &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB    &lt 2 ENTER  &lt 4 SPACE        &lt 5 BACKSPACE
             >;
+
+            label = "Base";
         };
 
         Num {
@@ -47,6 +52,8 @@
 &none  &trans        &trans        &trans        &trans        &trans          &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
                                    &kp LGUI      &trans        &kp SPACE       &kp RET           &kp N0                   &kp PERIOD
             >;
+
+            label = "Num";
         };
 
         Sym {
@@ -62,6 +69,8 @@
 &none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE           &kp PIPE        &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp TILDE        &none
                                         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp RET         &kp QUESTION     &kp RALT
             >;
+
+            label = "Sym";
         };
 
         Nav {
@@ -71,15 +80,19 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &kp INS              &kp HOME        &kp PAGE_DOWN     &kp PAGE_UP   &kp END        &trans
                         &trans  &trans  &trans    &trans               &trans          &kp LC(LEFT_GUI)
             >;
+
+            label = "Nav";
         };
 
-        media {
+        Media {
             bindings = <
 &trans  &trans        &trans        &trans        &trans              &trans        &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &kp C_REWIND  &kp C_VOL_UP  &kp C_VOL_DN  &kp C_FAST_FORWARD  &trans        &trans  &none   &none   &none   &none   &trans
 &trans  &trans        &trans        &trans        &trans              &trans        &trans  &trans  &trans  &trans  &trans  &trans
                                     &kp K_MUTE    &kp K_PLAY_PAUSE    &kp K_STOP    &trans  &trans  &trans
             >;
+
+            label = "Media";
         };
 
         Fun {
@@ -89,6 +102,8 @@
 &trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans  &trans  &trans  &trans  &trans  &trans
                                            &trans               &trans        &trans             &trans  &trans  &trans
             >;
+
+            label = "Fun";
         };
     };
 };
