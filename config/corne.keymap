@@ -10,10 +10,17 @@
 
 
 / {
-&mt {
-    tapping-term-ms = <400>;
-};
-
+behaviors {
+        mt: {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-unless-interrupted";
+            tapping-term-ms = <200>;                        // <---[[produces tap if held longer than tapping-term-ms]]
+            quick-tap-ms = <200>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+    
     keymap {
         compatible = "zmk,keymap";
 
