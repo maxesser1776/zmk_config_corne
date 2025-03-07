@@ -8,16 +8,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-<<<<<<< HEAD
-&mt {
-    compatible = "zmk, behaviors-hold-tap";
-    flavor = "balanced";
-    tapping-term-ms = <240>;
-};
-=======
-&mt { tapping-term-ms = <1000>; };
->>>>>>> 41fcfceab08a4cf7b95f33f3dcb4d7b506b9e4db
-
 / {
     keymap {
         compatible = "zmk,keymap";
