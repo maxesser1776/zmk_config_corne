@@ -33,9 +33,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y            &kp U              &kp I                    &kp O                 &kp P                    &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H            &mt RIGHT_SHIFT J  &hm RCTRL K              &hm RIGHT_ALT L       &mt LESS_THAN SEMICOLON  &none
-&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N            &kp M              &mt DOUBLE_QUOTES COMMA  &mt GREATER_THAN DOT  &mt QUESTION SLASH       &none
+&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y            &kp U              &kp I                  &kp O                 &kp P                &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H            &mt RIGHT_SHIFT J  &hm RCTRL K            &hm RIGHT_ALT L       &mt LESS_THAN COMMA  &none
+&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N            &kp M              &mt DOUBLE_QUOTES SQT  &mt GREATER_THAN DOT  &mt QUESTION SLASH   &none
                                        &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB    &lt 2 BACKSPACE  &lt 4 SPACE        &lt 5 ENTER
             >;
 
@@ -107,6 +107,15 @@
             >;
 
             label = "Fun";
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
