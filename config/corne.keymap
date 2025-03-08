@@ -52,7 +52,7 @@
             bindings = <
 &none  &bootloader   &none         &none         &none         &none           &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET     &none
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL             &none
-&none  &trans        &trans        &trans        &trans        &sl 1           &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
+&none  &bt BT_CLR    &trans        &trans        &trans        &sl 1           &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
                                    &kp LGUI      &trans        &kp SPACE       &kp RET           &kp N0                   &kp PERIOD
             >;
 
