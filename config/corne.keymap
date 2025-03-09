@@ -64,6 +64,13 @@
             bindings = <&kp P>;
             label = "PROJECT";
         };
+
+        molock: molock {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "MOLOCK";
+        };
     };
 
     keymap {
@@ -94,9 +101,9 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET     &none
-&none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL             &none
-&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
+&none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET  &none
+&none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL          &none
+&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &molock            &none
                      &kp M  &kp L  &kp DELETE    &kp RET           &kp N0                   &kp PERIOD
             >;
 
