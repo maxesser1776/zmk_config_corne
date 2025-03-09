@@ -22,6 +22,50 @@
         };
     };
 
+    macros {
+        press_pull: press_pull {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Q>;
+            label = "PRESS_PULL";
+        };
+
+        extrude: extrude {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp E>;
+            label = "EXTRUDE";
+        };
+
+        point_2_rec: point_2_rec {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R>;
+            label = "POINT_2_REC";
+        };
+
+        trim: trim {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T>;
+            label = "TRIM";
+        };
+
+        measure: measure {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp I>;
+            label = "MEASURE";
+        };
+
+        project: project {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P>;
+            label = "PROJECT";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -50,10 +94,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &bootloader   &none         &none         &none         &none           &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET     &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL             &none
-&none  &bt BT_CLR    &trans        &trans        &trans        &kp DEL         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
-                                   &kp LGUI      &trans        &kp SPACE       &kp RET           &kp N0                   &kp PERIOD
+&none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET     &none
+&none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL             &none
+&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp NON_US_BACKSLASH  &none
+                     &kp M  &kp L  &kp DELETE    &kp RET           &kp N0                   &kp PERIOD
             >;
 
             label = "Num";
@@ -67,10 +111,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE    &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTRK    &kp LPAR   &kp RIGHT_BRACE  &none
-&none  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS           &kp PLUS        &kp DOLLAR       &kp PERCENT  &kp CARET  &kp COLON        &none
-&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE           &kp PIPE        &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp TILDE        &none
-                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp RET         &kp QUESTION     &kp RALT
+&none  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE         &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTRK    &kp LPAR   &kp RIGHT_BRACE  &none
+&none  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS                &kp PLUS        &kp DOLLAR       &kp PERCENT  &kp CARET  &kp COLON        &none
+&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE                &kp PIPE        &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp TILDE        &none
+                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &hm UNDERSCORE MINUS    &kp RET         &kp QUESTION     &kp RALT
             >;
 
             label = "Sym";
@@ -100,22 +144,13 @@
 
         Fun {
             bindings = <
-&trans  &kp F12           &kp F7           &kp F8               &kp F9        &kp PRINTSCREEN    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &hm LEFT_GUI F11  &hm LEFT_ALT F4  &hm LEFT_CONTROL F5  &hm LSHFT F6  &kp SCROLLLOCK     &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans  &trans  &trans  &trans  &trans  &trans
-                                           &trans               &trans        &trans             &trans  &trans  &trans
+&trans  &kp F12           &kp F7           &kp F8               &kp F9        &kp PRINTSCREEN    &trans  &bootloader   &trans        &trans        &trans        &trans
+&trans  &hm LEFT_GUI F11  &hm LEFT_ALT F4  &hm LEFT_CONTROL F5  &hm LSHFT F6  &kp SCROLLLOCK     &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans  &trans        &trans        &trans        &trans        &bt BT_CLR
+                                           &trans               &trans        &trans             &trans  &trans        &trans
             >;
 
             label = "Fun";
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
-            >;
         };
     };
 };
