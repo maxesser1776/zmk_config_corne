@@ -73,6 +73,67 @@
         };
     };
 
+
+    /*****************************************************************************/
+                                /* Layers */
+/*****************************************************************************/
+
+#define BASE 0                /* Base layer; Colemak-DH */
+#define NUMBERS 1           /* Main Numbers (and symbols) layer */
+#define NUMBERS_MO 2         /* Momentary control layer for Numbers layer */
+#define NUMBERS_TOG 3        /* Locking control layer for Numbers layer */
+
+/* Base layers for limiting Combo scope */
+#define BASE_LAYERS BASE REPEAT_OFF ASSIST_OFF PC REPEAT_CONT REPEAT_CONT_SL \
+    REPEAT_CONT_OFF REPEAT_OFF_PC REPEAT_END REPEAT_END_PC SENT_CASE_CONT \
+    SENT_CASE_END SENT_CASE_END_PC CAP_I_CONT CAP_I_END
+
+/*****************************************************************************/
+                            /* Layer Conditions */
+/*****************************************************************************/
+
+/* Conditional Layer helper */
+#define LAYER_CONDITION(NAME, IF, THEN) \
+    NAME { \
+        if-layers = <IF>; \
+        then-layer = <THEN>; \
+    };
+
+/ {
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        /* Support for both smart typing assist and repeat key being enabled */
+        LAYER_CONDITION(repeat_cont, REPEAT_CONT_SL, REPEAT_CONT)
+        LAYER_CONDITION(repeat_cap_i_cont, CAP_I_END, REPEAT_CONT)
+        LAYER_CONDITION(repeat_cont_off, REPEAT_OFF REPEAT_CONT, REPEAT_CONT_OFF)
+
+        /* Support for toggling Mac/PC mode */
+        LAYER_CONDITION(repeat_off_pc, PC REPEAT_OFF, REPEAT_OFF_PC)
+        LAYER_CONDITION(repeat_end_pc, PC REPEAT_END, REPEAT_END_PC)
+        LAYER_CONDITION(sent_case_end_pc, PC SENT_CASE_END, SENT_CASE_END_PC)
+        LAYER_CONDITION(continue_selection_pc, PC SELECT_CONT, SELECT_CONT_PC)
+        LAYER_CONDITION(editing_pc, PC EDITING, EDITING_PC)
+        LAYER_CONDITION(media_pc, PC MEDIA, MEDIA_PC)
+        LAYER_CONDITION(numbers_pc, PC NUMBERS, NUM_FUNC_PC)
+        LAYER_CONDITION(function_pc, PC FUNCTION, NUM_FUNC_PC)
+
+        /* Layer lock feature for Numbers layer */
+        LAYER_CONDITION(numbers_mo, NUMBERS_MO, NUMBERS)
+        LAYER_CONDITION(numbers_tog, NUMBERS_TOG, NUMBERS)
+
+        /* Layer lock feature for Editing layer */
+        LAYER_CONDITION(editing_mo, EDITING_MO, EDITING)
+        LAYER_CONDITION(editing_tog, EDITING_TOG, EDITING)
+
+        /* Restrict selection continuation to Editing layer */
+        LAYER_CONDITION(continue_selection, EDITING SELECT_CONT_SL, SELECT_CONT)
+
+        /* Hold Media and Function layers for System layer */
+        LAYER_CONDITION(system_layer, MEDIA FUNCTION, SYSTEM)
+    };
+};
+
     keymap {
         compatible = "zmk,keymap";
 
