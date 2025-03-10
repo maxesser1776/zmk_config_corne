@@ -20,9 +20,8 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
-    };
-
-     behaviors {
+    
+        behaviors {
         tog_on: toggle_layer_on_only {
             compatible = "zmk,behavior-toggle-layer";
             #binding-cells = <1>;
@@ -31,6 +30,9 @@
         };
     };
 };
+    
+
+
 
     keymap {
         compatible = "zmk,keymap";
