@@ -22,117 +22,6 @@
         };
     };
 
-    macros {
-        press_pull: press_pull {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp Q>;
-            label = "PRESS_PULL";
-        };
-
-        extrude: extrude {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp E>;
-            label = "EXTRUDE";
-        };
-
-        point_2_rec: point_2_rec {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp R>;
-            label = "POINT_2_REC";
-        };
-
-        trim: trim {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp T>;
-            label = "TRIM";
-        };
-
-        measure: measure {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp I>;
-            label = "MEASURE";
-        };
-
-        project: project {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp P>;
-            label = "PROJECT";
-        };
-
-        molock: molock {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&none>;
-            label = "MOLOCK";
-        };
-    };
-
-
-    /*****************************************************************************/
-                                /* Layers */
-/*****************************************************************************/
-
-#define BASE 0                /* Base layer; Colemak-DH */
-#define NUMBERS 1           /* Main Numbers (and symbols) layer */
-#define NUMBERS_MO 2         /* Momentary control layer for Numbers layer */
-#define NUMBERS_TOG 3        /* Locking control layer for Numbers layer */
-
-/* Base layers for limiting Combo scope */
-#define BASE_LAYERS BASE REPEAT_OFF ASSIST_OFF PC REPEAT_CONT REPEAT_CONT_SL \
-    REPEAT_CONT_OFF REPEAT_OFF_PC REPEAT_END REPEAT_END_PC SENT_CASE_CONT \
-    SENT_CASE_END SENT_CASE_END_PC CAP_I_CONT CAP_I_END
-
-/*****************************************************************************/
-                            /* Layer Conditions */
-/*****************************************************************************/
-
-/* Conditional Layer helper */
-#define LAYER_CONDITION(NAME, IF, THEN) \
-    NAME { \
-        if-layers = <IF>; \
-        then-layer = <THEN>; \
-    };
-
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        /* Support for both smart typing assist and repeat key being enabled */
-        LAYER_CONDITION(repeat_cont, REPEAT_CONT_SL, REPEAT_CONT)
-        LAYER_CONDITION(repeat_cap_i_cont, CAP_I_END, REPEAT_CONT)
-        LAYER_CONDITION(repeat_cont_off, REPEAT_OFF REPEAT_CONT, REPEAT_CONT_OFF)
-
-        /* Support for toggling Mac/PC mode */
-        LAYER_CONDITION(repeat_off_pc, PC REPEAT_OFF, REPEAT_OFF_PC)
-        LAYER_CONDITION(repeat_end_pc, PC REPEAT_END, REPEAT_END_PC)
-        LAYER_CONDITION(sent_case_end_pc, PC SENT_CASE_END, SENT_CASE_END_PC)
-        LAYER_CONDITION(continue_selection_pc, PC SELECT_CONT, SELECT_CONT_PC)
-        LAYER_CONDITION(editing_pc, PC EDITING, EDITING_PC)
-        LAYER_CONDITION(media_pc, PC MEDIA, MEDIA_PC)
-        LAYER_CONDITION(numbers_pc, PC NUMBERS, NUM_FUNC_PC)
-        LAYER_CONDITION(function_pc, PC FUNCTION, NUM_FUNC_PC)
-
-        /* Layer lock feature for Numbers layer */
-        LAYER_CONDITION(numbers_mo, NUMBERS_MO, NUMBERS)
-        LAYER_CONDITION(numbers_tog, NUMBERS_TOG, NUMBERS)
-
-        /* Layer lock feature for Editing layer */
-        LAYER_CONDITION(editing_mo, EDITING_MO, EDITING)
-        LAYER_CONDITION(editing_tog, EDITING_TOG, EDITING)
-
-        /* Restrict selection continuation to Editing layer */
-        LAYER_CONDITION(continue_selection, EDITING SELECT_CONT_SL, SELECT_CONT)
-
-        /* Hold Media and Function layers for System layer */
-        LAYER_CONDITION(system_layer, MEDIA FUNCTION, SYSTEM)
-    };
-};
 
     keymap {
         compatible = "zmk,keymap";
@@ -164,7 +53,7 @@
             bindings = <
 &none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET  &none
 &none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL          &none
-&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &molock            &none
+&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &to             &none
                      &kp M  &kp L  &kp DELETE    &kp RET           &kp N0                   &kp PERIOD
             >;
 
