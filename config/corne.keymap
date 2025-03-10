@@ -45,6 +45,11 @@
             bindings = <&tog_on 1>;
             key-positions = <38 39>;
         };
+
+        layer_lock_off {
+            bindings = <&tog_off 1>;
+            key-positions = <38 37>;
+        };
     };
 
     keymap {
