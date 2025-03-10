@@ -28,6 +28,13 @@
                 display-name = "Toggle Layer On";
                 toggle-mode = "on";
             };
+
+            tog_off: toggle_layer_off_only {
+                compatible = "zmk,behavior-toggle-layer";
+                #binding-cells = <1>;
+                display-name = "Toggle Layer Off";
+                toggle-mode = "off";
+            };
         };
     };
 
