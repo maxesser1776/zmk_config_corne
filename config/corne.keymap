@@ -22,6 +22,16 @@
         };
     };
 
+     behaviors {
+        tog_on: toggle_layer_on_only {
+            compatible = "zmk,behavior-toggle-layer";
+            #binding-cells = <1>;
+            display-name = "Toggle Layer On";
+            toggle-mode = "on";
+        };
+    };
+};
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -35,7 +45,7 @@
             bindings = <
 &none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I                  &kp O                 &kp P                &none
 &none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &hm RCTRL K            &hm RIGHT_ALT L       &mt LESS_THAN COMMA  &none
-&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &mt DOUBLE_QUOTES SQT  &mt GREATER_THAN DOT  &tog 1               &none
+&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &mt DOUBLE_QUOTES SQT  &mt GREATER_THAN DOT  &tog_on 1               &none
                                        &lt 4 ESCAPE  &lt 5 SPACE       &lt 1 TAB    &lt 4 ENTER  &lt 4 SPACE        &lt 5 BACKSPACE
             >;
 
@@ -52,7 +62,7 @@
             bindings = <
 &none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET  &none
 &none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL          &none
-&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &to                &none
+&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &to 1              &none
                      &kp M  &kp L  &kp DELETE    &kp RET           &kp N0                   &kp PERIOD
             >;
 
