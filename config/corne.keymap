@@ -48,7 +48,7 @@
 
         layer_lock_off {
             bindings = <&tog_off 1>;
-            key-positions = <38 39>;
+            key-positions = <38 37>;
         };
     };
 
