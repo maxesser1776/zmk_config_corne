@@ -100,7 +100,7 @@
 &none  &mt TILDE GRAVE                 &mt AMPERSAND PIPE                      &mt ASTERISK SLASH          &mt GREATER_THAN LESS_THAN  &kp SLASH               &trans   &trans  &trans  &trans  &trans  &none
 &none  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACE LEFT_BRACE  &mt COLON SEMICOLON         &kp PLUS                &trans   &trans  &trans  &trans  &trans  &none
 &none  &trans                          &mt EXCLAMATION QUESTION                &mt HASH AT_SIGN            &kp COMMA                   &kp LCTRL               &trans   &trans  &trans  &trans  &trans  &none
-                                                                               &trans                      &trans                      &hm UNDERSCORE MINUS    &kp RET  &trans  &trans
+                                                                               &trans                      &kp DELETE                  &hm UNDERSCORE MINUS    &kp RET  &trans  &trans
             >;
 
             label = "Sym";
