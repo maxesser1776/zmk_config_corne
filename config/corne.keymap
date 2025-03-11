@@ -80,10 +80,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp Q  &kp O  &kp E  &kp R  &kp T         &kp LEFT_BRACKET  &kp N7                   &kp N8               &kp N9                 &kp RIGHT_BRACKET  &none
-&none  &kp I  &kp S  &kp D  &kp F  &kp P         &kp SEMICOLON     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL          &none
-&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE         &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &to 1              &none
-                     &kp M  &kp L  &kp DELETE    &kp RET           &kp N0                   &kp PERIOD
+&none  &kp Q  &kp O  &kp E  &kp R  &kp T         &trans     &kp N7                   &kp N8               &kp N9                 &trans     &none
+&none  &kp I  &kp S  &kp D  &kp F  &kp P         &trans     &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL  &none
+&none  &kp X  &kp C  &kp V  &kp J  &kp H         &kp GRAVE  &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &to 1      &none
+                     &kp M  &kp L  &kp DELETE    &kp RET    &kp N0                   &kp PERIOD
             >;
 
             label = "Num";
@@ -97,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTERISK          &kp LEFT_PARENTHESIS   &kp RIGHT_BRACE         &kp LEFT_BRACE  &kp AMPERSAND    &kp ASTRK    &kp LPAR   &kp RIGHT_BRACE  &none
-&none  &kp COLON       &kp DOLLAR       &kp PERCENT           &kp CARET              &kp PLUS                &kp PLUS        &kp DOLLAR       &kp PERCENT  &kp CARET  &kp COLON        &none
-&none  &kp TILDE       &kp EXCLAMATION  &kp AT_SIGN           &kp HASH               &kp PIPE                &kp PIPE        &kp EXCLAMATION  &kp AT_SIGN  &kp HASH   &kp TILDE        &none
-                                        &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &hm UNDERSCORE MINUS    &kp RET         &kp QUESTION     &kp RALT
+&none  &mt TILDE GRAVE                 &mt AMPERSAND PIPE                      &mt ASTERISK SLASH          &mt GREATER_THAN LESS_THAN  &trans                  &trans   &trans  &trans  &trans  &trans  &none
+&none  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACE LEFT_BRACE  &mt COLON SEMICOLON         &kp PLUS                &trans   &trans  &trans  &trans  &trans  &none
+&none  &trans                          &mt EXCLAMATION AT_SIGN                 &mt HASH AT_SIGN            &kp COMMA                   &kp LCTRL               &trans   &trans  &trans  &trans  &trans  &none
+                                                                               &trans                      &trans                      &hm UNDERSCORE MINUS    &kp RET  &trans  &trans
             >;
 
             label = "Sym";
