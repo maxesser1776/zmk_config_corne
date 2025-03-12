@@ -108,10 +108,10 @@
 
         Nav {
             bindings = <
-&trans  &sl 1   &trans  &trans  &trans  &trans    &kp C_AL_CALCULATOR  &kp C_AC_PASTE  &kp C_AC_COPY     &kp C_AC_CUT  &kp C_AC_UNDO  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp CAPS             &kp LEFT        &kp DOWN          &kp UP_ARROW  &kp RIGHT      &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &kp INS              &kp HOME        &kp PAGE_DOWN     &kp PAGE_UP   &kp END        &trans
-                        &trans  &trans  &trans    &trans               &trans          &kp LC(LEFT_GUI)
+&trans  &sl 1   &trans  &trans  &trans  &trans    &kp C_AL_CALCULATOR  &kp K_PASTE  &kp K_COPY        &kp K_CUT     &kp K_UNDO  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp CAPS             &kp LEFT     &kp DOWN          &kp UP_ARROW  &kp RIGHT   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp INS              &kp HOME     &kp PAGE_DOWN     &kp PAGE_UP   &kp END     &trans
+                        &trans  &trans  &trans    &trans               &trans       &kp LC(LEFT_GUI)
             >;
 
             label = "Nav";
