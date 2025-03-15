@@ -53,7 +53,7 @@
 
         switch_dektop_left {
             bindings = <&kp LG(LC(LEFT_ARROW))>;
-            key-positions = <12 17>;
+            key-positions = <17 13>;
         };
     };
 
