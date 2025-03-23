@@ -68,9 +68,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W           &kp E         &kp R             &kp T                        &kp Y        &kp U              &kp I                  &kp O                 &kp P               &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &mt LG(LC(RIGHT_ARROW)) G    &kp H        &mt RIGHT_SHIFT J  &hm RCTRL K            &hm RIGHT_ALT L       &kp BACKSPACE       &none
-&none  &kp Z           &kp X           &kp C         &kp V             &kp B                        &kp N        &kp M              &mt DOUBLE_QUOTES SQT  &mt GREATER_THAN DOT  &mt QUESTION SLASH  &none
+&none  &kp Q           &kp W           &kp E         &kp R             &kp T                        &kp Y        &kp U              &kp I                  &kp O            &kp P               &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &mt LG(LC(RIGHT_ARROW)) G    &kp H        &mt RIGHT_SHIFT J  &hm RCTRL K            &hm RIGHT_ALT L  &kp BACKSPACE       &none
+&none  &kp Z           &kp X           &kp C         &kp V             &kp B                        &kp N        &kp M              &mt DOUBLE_QUOTES SQT  &mt COMMA DOT    &mt QUESTION SLASH  &none
                                        &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB                    &lt 2 ENTER  &lt 4 SPACE        &lt 5 BACKSPACE
             >;
 
@@ -102,10 +102,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &mt TILDE GRAVE                 &mt AMPERSAND PIPE                      &mt ASTERISK SLASH          &mt GREATER_THAN LESS_THAN  &kp SLASH               &trans   &trans  &trans  &trans  &trans  &none
-&none  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACE LEFT_BRACE  &mt COLON SEMICOLON         &kp PLUS                &trans   &trans  &trans  &trans  &trans  &none
-&none  &mt PERCENT DOLLAR              &mt EXCLAMATION QUESTION                &mt HASH AT_SIGN            &kp COMMA                   &kp LCTRL               &trans   &trans  &trans  &trans  &trans  &none
-                                                                               &trans                      &kp DELETE                  &hm UNDERSCORE MINUS    &kp RET  &trans  &trans
+&none  &mt TILDE GRAVE                 &mt AMPERSAND PIPE                      &mt ASTERISK EQUAL          &mt GREATER_THAN LESS_THAN  &mt NON_US_BACKSLASH SLASH    &trans   &trans  &trans  &trans  &trans  &none
+&none  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACE LEFT_BRACE  &mt COLON SEMICOLON         &kp PLUS                      &trans   &trans  &trans  &trans  &trans  &none
+&none  &mt PERCENT DOLLAR              &mt EXCLAMATION QUESTION                &mt HASH AT_SIGN            &mt SQT COMMA               &kp LCTRL                     &trans   &trans  &trans  &trans  &trans  &none
+                                                                               &trans                      &kp DELETE                  &hm UNDERSCORE MINUS          &kp RET  &trans  &trans
             >;
 
             label = "Sym";
