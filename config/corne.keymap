@@ -100,10 +100,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp Q  &kp O  &kp E  &kp R       &kp T                   &kp PERCENT   &kp N7                   &kp N8               &kp N9                 &kp PLUS   &none
-&none  &kp I  &kp S  &kp D  &mt F L     &kp P                   &kp ASTERISK  &hm LEFT_SHIFT NUMBER_4  &hm LEFT_CONTROL N5  &hm LEFT_ALT NUMBER_6  &kp EQUAL  &none
-&none  &kp X  &kp C  &kp V  &kp J       &kp H                   &kp SLASH     &kp NUMBER_1             &kp NUMBER_2         &kp NUMBER_3           &kp MINUS  &none
-                     &kp M  &kp ESCAPE  &mt DELETE BACKSPACE    &kp RET       &kp N0                   &kp PERIOD
+&none  &kp ASTRK  &kp N9  &kp N8     &kp N7   &kp PLUS     &trans  &trans  &trans  &trans  &trans  &none
+&none  &kp FSLH   &kp N6  &kp N5     &kp N4   &kp MINUS    &trans  &trans  &trans  &trans  &trans  &none
+&none  &kp N0     &kp N3  &kp N2     &kp N1   &kp DOT      &trans  &trans  &trans  &trans  &trans  &none
+                          &kp EQUAL  &kp DEL  &none        &trans  &trans  &trans
             >;
 
             label = "Num";
