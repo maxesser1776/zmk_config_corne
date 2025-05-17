@@ -98,6 +98,20 @@
             bindings = <&kp LC(V)>;
             label = "PASTE";
         };
+
+        double_periodbackslash: double_periodbackslash {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp DOT &kp DOT &kp FSLH>;
+            label = "DOUBLE_PERIODBACKSLASH";
+        };
+
+        double_colon: double_colon {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp COLON &kp COLON>;
+            label = "DOUBLE_COLON";
+        };
     };
 
     keymap {
@@ -145,10 +159,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &mt TILDE GRAVE                 &mt AMPERSAND PIPE                      &mt ASTERISK EQUAL          &mt GREATER_THAN LESS_THAN  &mt NON_US_BACKSLASH SLASH    &trans   &trans  &trans  &trans  &trans  &none
-&none  &mt RIGHT_BRACKET LEFT_BRACKET  &mt RIGHT_PARENTHESIS LEFT_PARENTHESIS  &mt RIGHT_BRACE LEFT_BRACE  &mt COLON SEMICOLON         &kp PLUS                      &trans   &trans  &trans  &trans  &trans  &none
-&none  &mt PERCENT DOLLAR              &mt EXCLAMATION QUESTION                &mt HASH AT_SIGN            &mt SQT COMMA               &kp LCTRL                     &trans   &trans  &trans  &trans  &trans  &none
-                                                                               &trans                      &kp DELETE                  &hm UNDERSCORE MINUS          &kp RET  &trans  &trans
+&none  &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp PERIOD                 &kp AMPERSAND  &double_colon  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT   &none
+&none  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL          &kp HASH                   &kp PIPE       &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION  &none
+&none  &kp CARET        &kp SLASH      &kp ASTERISK      &kp BACKSLASH      &double_periodbackslash    &kp TILDE      &kp DOLLAR     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AT_SIGN   &none
+                                       &trans            &kp DELETE         &hm UNDERSCORE MINUS       &kp RET        &trans         &trans
             >;
 
             label = "Sym";
