@@ -162,7 +162,7 @@
 &none  &kp SQT          &kp LESS_THAN  &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp PERIOD                 &kp AMPERSAND  &double_colon  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp PERCENT   &none
 &none  &kp EXCLAMATION  &kp MINUS      &kp PLUS          &kp EQUAL          &kp HASH                   &kp PIPE       &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION  &none
 &none  &kp CARET        &kp SLASH      &kp ASTERISK      &kp BACKSLASH      &double_periodbackslash    &kp TILDE      &kp DOLLAR     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp AT_SIGN   &none
-                                       &trans            &kp DELETE         &hm UNDERSCORE MINUS       &kp RET        &trans         &trans
+                                       &trans            &kp DELETE         &hm UNDERSCORE MINUS       &kp RET        &kp SEMICOLON  &kp PERIOD
             >;
 
             label = "Sym";
