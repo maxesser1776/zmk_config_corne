@@ -128,10 +128,10 @@
 
         Nav {
             bindings = <
-&trans  &none   &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP    &kp C_AL_DOCS      &kp C_AL_CALCULATOR    &kp C_AC_PASTE  &kp C_AC_COPY     &kp K_CUT    &kp K_UNDO  &trans
-&trans  &none   &mmv MOVE_LEFT  &mkp MB1        &mkp MB2        &mmv MOVE_RIGHT    &kp CAPS               &kp LEFT        &kp UP            &kp DOWN     &kp RIGHT   &trans
-&trans  &trans  &none           &mmv MOVE_DOWN  &msc SCRL_DOWN  &trans             &kp C_AL_TASK_MANAGER  &kp HOME        &kp PAGE_DOWN     &kp PAGE_UP  &kp END     &trans
-                                &trans          &trans          &trans             &trans                 &trans          &kp LC(LEFT_GUI)
+&trans  &none   &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP    &kp C_AL_DOCUMENTS    &kp C_AL_CALCULATOR    &kp C_AC_PASTE  &kp C_AC_COPY     &kp K_CUT    &kp K_UNDO  &trans
+&trans  &none   &mmv MOVE_LEFT  &mkp MB1        &mkp MB2        &mmv MOVE_RIGHT       &kp CAPS               &kp LEFT        &kp UP            &kp DOWN     &kp RIGHT   &trans
+&trans  &trans  &none           &mmv MOVE_DOWN  &msc SCRL_DOWN  &trans                &kp C_AL_TASK_MANAGER  &kp HOME        &kp PAGE_DOWN     &kp PAGE_UP  &kp END     &trans
+                                &trans          &trans          &trans                &trans                 &trans          &kp LC(LEFT_GUI)
             >;
 
             label = "Nav";
