@@ -112,6 +112,13 @@
             bindings = <&kp COLON &kp COLON>;
             label = "DOUBLE_COLON";
         };
+
+        quake_mode: quake_mode {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LG(GRAVE)>;
+            label = "QUAKE_MODE";
+        };
     };
 
     keymap {
@@ -170,10 +177,10 @@
 
         Nav {
             bindings = <
-&trans  &none   &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp    &kp C_AL_CALCULATOR  &paste    &copy             &kp K_CUT    &kp K_UNDO  &trans
-&trans  &none   &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK    &kp CAPS             &kp LEFT  &kp UP            &kp DOWN     &kp RIGHT   &trans
-&trans  &trans  &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &trans       &task_manager        &kp HOME  &kp PAGE_DOWN     &kp PAGE_UP  &kp END     &trans
-                                &trans          &trans           &trans       &trans               &trans    &kp LC(LEFT_GUI)
+&trans  &none   &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste    &copy             &kp K_CUT    &kp K_UNDO  &trans
+&trans  &none   &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT  &kp UP            &kp DOWN     &kp RIGHT   &trans
+&trans  &trans  &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &kp HOME  &kp PAGE_DOWN     &kp PAGE_UP  &kp END     &trans
+                                &trans          &trans           &trans         &trans               &trans    &kp LC(LEFT_GUI)
             >;
 
             label = "Nav";
