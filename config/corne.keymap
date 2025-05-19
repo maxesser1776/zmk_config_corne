@@ -158,7 +158,7 @@
         protonmail: protonmail {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(R) &kp ENTER>;
+            bindings = <&kp LC(LA(O))>;
             label = "PROTONMAIL";
             wait-ms = <15>;
         };
