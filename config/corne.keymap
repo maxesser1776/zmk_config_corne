@@ -140,6 +140,20 @@
             bindings = <&kp LS(V)>;
             label = "FUSION_UNISOLATE";
         };
+
+        chrome_back: chrome_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LEFT)>;
+            label = "CHROME_BACK";
+        };
+
+        chrome_forward: chrome_forward {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(RIGHT)>;
+            label = "CHROME_FORWARD";
+        };
     };
 
     keymap {
@@ -198,9 +212,9 @@
 
         Nav {
             bindings = <
-&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste    &copy             &kp K_CUT    &kp K_UNDO  &trans
-&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT  &kp UP            &kp DOWN     &kp RIGHT   &trans
-&trans  &fusion_unisolate        &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &kp HOME  &kp PAGE_DOWN     &kp PAGE_UP  &kp END     &trans
+&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste    &copy             &kp K_CUT        &kp K_UNDO  &trans
+&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT  &kp UP            &kp DOWN         &kp RIGHT   &trans
+&trans  &fusion_unisolate        &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &kp HOME  &chrome_back      &chrome_forward  &kp END     &trans
                                                  &trans          &trans           &trans         &trans               &trans    &kp LC(LEFT_GUI)
             >;
 
