@@ -62,12 +62,12 @@
     };
 
     macros {
-        win_sleep: win_sleep {
+        win_lock: win_sleep {
             wait-ms = <50>;
             tap-ms = <5>;
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(X) &kp U &kp S>;
+            bindings = <&kp LG(L)>;
             label = "WIN_SLEEP";
         };
 
@@ -256,10 +256,10 @@
 
         Fun {
             bindings = <
-&trans  &kp F12           &kp F7           &kp F8               &kp F9        &kp PRINTSCREEN    &trans  &bootloader   &trans        &trans        &trans        &trans
-&trans  &hm LEFT_GUI F11  &hm LEFT_ALT F4  &hm LEFT_CONTROL F5  &hm LSHFT F6  &kp SCROLLLOCK     &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans  &trans        &trans        &trans        &trans        &bt BT_CLR
-                                           &trans               &trans        &win_sleep         &trans  &trans        &trans
+&trans  &kp F12           &kp F7           &kp F8               &kp F9        &kp PRINTSCREEN    &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &hm LEFT_GUI F11  &hm LEFT_ALT F4  &hm LEFT_CONTROL F5  &hm LSHFT F6  &kp SCROLLLOCK     &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp F10           &kp F1           &kp F2               &kp F3        &kp PAUSE_BREAK    &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
+                                           &bootloader          &trans        &win_lock          &bootloader  &trans        &trans
             >;
 
             label = "Fun";
