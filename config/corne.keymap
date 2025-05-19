@@ -162,6 +162,20 @@
             label = "PROTONMAIL";
             wait-ms = <15>;
         };
+
+        chrome_tab_forward: chrome_tab_forward {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(TAB)>;
+            label = "CHROME_TAB_FORWARD";
+        };
+
+        chrome_tab_back: chrome_tab_back {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(TAB))>;
+            label = "CHROME_TAB_BACK";
+        };
     };
 
     keymap {
@@ -220,10 +234,10 @@
 
         Nav {
             bindings = <
-&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste    &copy             &kp K_CUT        &kp K_UNDO  &trans
-&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT  &kp UP            &kp DOWN         &kp RIGHT   &trans
-&trans  &fusion_unisolate        &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &kp HOME  &chrome_back      &chrome_forward  &kp END     &trans
-                                                 &trans          &trans           &trans         &trans               &trans    &kp LC(LEFT_GUI)
+&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste            &copy             &kp K_CUT        &kp K_UNDO           &trans
+&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT          &kp UP            &kp DOWN         &kp RIGHT            &trans
+&trans  &fusion_unisolate        &none           &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &chrome_tab_back  &chrome_back      &chrome_forward  &chrome_tab_forward  &trans
+                                                 &trans          &trans           &trans         &trans               &trans            &kp LC(LEFT_GUI)
             >;
 
             label = "Nav";
