@@ -18,10 +18,10 @@
             compatible = "zmk,behavior-hold-tap";
             label = "homehow-mods";
             #binding-cells = <2>;
-            tapping-term-ms = <300>;
+            tapping-term-ms = <200>;
             flavor = "tap-preferred";
             quick-tap-ms = <125>;
-            global-quick-tap;
+            // global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
 
