@@ -190,10 +190,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I            &kp O            &kp P      &none
-&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &hm RCTRL K      &hm RIGHT_ALT L  &kp SQT    &none
-&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA        &kp PERIOD       &kp SLASH  &none
-                                       &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB    &lt 2 ENTER  &lt 4 SPACE        &lt 5 BACKSPACE
+&none  &kp Q           &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I        &kp O            &kp P          &none
+&none  &hm LEFT_GUI A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H        &mt RIGHT_SHIFT J  &hm RCTRL K  &hm RIGHT_ALT L  &kp BACKSPACE  &none
+&none  &kp Z           &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA    &kp PERIOD       &kp SLASH      &none
+                                       &lt 2 ESCAPE  &lt 3 SPACE       &lt 1 TAB    &lt 2 ENTER  &lt 4 SPACE        &lt 5 SQT
             >;
 
             label = "Base";
