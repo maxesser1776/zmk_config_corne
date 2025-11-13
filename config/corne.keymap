@@ -43,6 +43,7 @@
         compatible = "zmk,combos";
 
         /* Example combo: desktop switch left (hold two middle index keys) */
+
         switch_desktop_left {
             bindings = <&kp LG(LC(LEFT_ARROW))>;
             key-positions = <17 13>;
@@ -189,10 +190,10 @@
             // Home row mods: S = LALT, D = LCTRL, F = LSHIFT, J = RSHIFT, K = RCTRL, L = RALT
 
             bindings = <
-&none  &kp Q              &kp W              &kp E              &kp R                &kp T                     &kp Y              &kp U               &kp I             &kp O               &kp P              &none
-&none  &kp A              &hm LEFT_ALT S     &hm LCTRL D        &hm LEFT_SHIFT F     &kp G                     &kp H              &hm RIGHT_SHIFT J   &hm RCTRL K       &hm RIGHT_ALT L     &kp SQT            &none
-&none  &kp Z              &kp X              &kp C              &kp V                &kp B                     &kp N              &kp M               &kp COMMA         &kp DOT             &kp FSLH           &none
-                             &lt 1 ESCAPE      &lt 3 SPACE         &lt 2 TAB              &lt 2 ENTER        &lt 4 SPACE          &lt 5 BACKSPACE
+&none  &kp Q  &kp W           &kp E         &kp R             &kp T        &kp Y        &kp U              &kp I            &kp O            &kp P     &none
+&none  &kp A  &hm LEFT_ALT S  &hm LCTRL D   &hm LEFT_SHIFT F  &kp G        &kp H        &hm RIGHT_SHIFT J  &hm RCTRL K      &hm RIGHT_ALT L  &kp SQT   &none
+&none  &kp Z  &kp X           &kp C         &kp V             &kp B        &kp N        &kp M              &kp COMMA        &kp DOT          &kp FSLH  &none
+                              &lt 1 ESCAPE  &lt 3 SPACE       &lt 2 TAB    &lt 2 ENTER  &lt 4 SPACE        &lt 5 BACKSPACE
             >;
 
             label = "Base";
@@ -202,10 +203,10 @@
             // Navigation, mouse, window control, Chrome, ProtonMail, Quake, etc.
 
             bindings = <
-&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP      &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste            &copy             &kp K_CUT        &kp K_UNDO           &trans
-&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1          &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT          &kp UP            &kp DOWN         &kp RIGHT            &trans
-&trans  &fusion_unisolate        &protonmail     &mmv MOVE_DOWN    &msc SCRL_DOWN   &quake_mode    &task_manager        &chrome_tab_back  &chrome_back      &chrome_forward  &chrome_tab_forward  &trans
-                                                &trans            &trans           &trans         &trans               &trans            &kp LG
+&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste            &copy         &kp K_CUT        &kp K_UNDO           &trans
+&trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT          &kp UP        &kp DOWN         &kp RIGHT            &trans
+&trans  &fusion_unisolate        &protonmail     &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &chrome_tab_back  &chrome_back  &chrome_forward  &chrome_tab_forward  &trans
+                                                 &trans          &trans           &trans         &trans               &trans            &kp LEFT_GUI
             >;
 
             label = "Nav";
@@ -215,10 +216,10 @@
             // Num pad + a few nav/edit keys
 
             bindings = <
-&none  &kp TAB      &kp N7     &kp N8      &kp N9      &kp PLUS      &trans  &kp N4      &kp N5       &kp N6      &kp MINUS   &none
-&none  &kp GRAVE    &kp N1     &kp N2      &kp N3      &kp EQUAL     &trans  &kp N0      &kp COMMA    &kp DOT     &kp FSLH    &none
-&none  &kp ESCAPE   &kp F1     &kp F2      &kp F3      &kp F4        &trans  &kp HOME    &kp PGDN     &kp PGUP    &kp END     &none
-                           &trans        &trans        &trans         &trans         &trans         &trans
+&none  &kp TAB     &kp N7  &kp N8  &kp N9  &kp PLUS     &trans  &kp N4    &kp N5     &kp N6    &kp MINUS  &none
+&none  &kp GRAVE   &kp N1  &kp N2  &kp N3  &kp EQUAL    &trans  &kp N0    &kp COMMA  &kp DOT   &kp FSLH   &none
+&none  &kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4       &trans  &kp HOME  &kp PGDN   &kp PGUP  &kp END    &none
+                           &trans  &trans  &trans       &trans  &trans    &trans
             >;
 
             label = "Num";
@@ -228,10 +229,10 @@
             // Symbols & programming punctuation
 
             bindings = <
-&none  &kp EXCLAMATION  &kp AT_SIGN        &kp HASH             &kp DOLLAR       &kp PERCENT           &kp CARET       &kp AMPERSAND        &kp ASTERISK         &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
-&none  &kp MINUS        &kp UNDERSCORE     &kp PLUS             &kp EQUAL        &kp PIPE              &kp BACKSLASH   &kp LEFT_BRACKET     &kp RIGHT_BRACKET    &double_colon         &kp GRAVE              &none
-&none  &double_periodbackslash  &kp SLASH  &kp QUESTION        &kp LESS_THAN    &kp GREATER_THAN      &kp TILDE       &kp LEFT_BRACE       &kp RIGHT_BRACE      &kp SQT               &kp DOUBLE_QUOTES      &none
-                                       &trans              &kp DELETE      &trans               &kp ENTER          &kp SEMICOLON         &kp COLON
+&none  &kp EXCLAMATION          &kp AT_SIGN     &kp HASH      &kp DOLLAR     &kp PERCENT         &kp CARET      &kp AMPERSAND     &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none
+&none  &kp MINUS                &kp UNDERSCORE  &kp PLUS      &kp EQUAL      &kp PIPE            &kp BACKSLASH  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &double_colon         &kp GRAVE              &none
+&none  &double_periodbackslash  &kp SLASH       &kp QUESTION  &kp LESS_THAN  &kp GREATER_THAN    &kp TILDE      &kp LEFT_BRACE    &kp RIGHT_BRACE    &kp SQT               &kp DOUBLE_QUOTES      &none
+                                                &trans        &kp DELETE     &trans              &kp ENTER      &kp SEMICOLON     &kp COLON
             >;
 
             label = "Sym";
@@ -254,10 +255,10 @@
             // F-keys, BT selection, bootloader, Win lock
 
             bindings = <
-&trans  &kp F12   &kp F7   &kp F8          &kp F9        &kp PRINTSCREEN    &trans       &trans        &trans        &trans        &trans        &trans
-&trans  &kp F11   &kp F4   &kp F5          &kp F6        &kp SCROLLLOCK     &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &kp F10   &kp F1   &kp F2          &kp F3        &kp PAUSE_BREAK    &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
-                                   &bootloader    &trans      &win_lock        &bootloader  &trans        &trans
+&trans  &kp F12  &kp F7  &kp F8       &kp F9  &kp PRINTSCREEN    &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &kp F11  &kp F4  &kp F5       &kp F6  &kp SCROLLLOCK     &trans       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &kp F10  &kp F1  &kp F2       &kp F3  &kp PAUSE_BREAK    &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
+                         &bootloader  &trans  &win_lock          &bootloader  &trans        &trans
             >;
 
             label = "Fun";
