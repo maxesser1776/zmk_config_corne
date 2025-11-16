@@ -224,10 +224,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp APOS         &kp LESS_THAN  &kp GREATER_THAN      &kp DOUBLE_QUOTES      &kp DOT           &kp AMPS   &kp COLON  &kp LBKT              &kp RBKT               &kp PRCNT  &none
-&none  &kp EXCLAMATION  &kp MINUS      &kp PLUS              &kp EQUAL              &kp POUND         &kp PIPE   &kp COLON  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QMARK  &none
-&none  &kp CARET        &kp FSLH       &kp STAR              &kp BSLH               &kp PIPE          &kp TILDE  &kp DLLR   &kp LBRC              &kp RBRC               &kp AT     &none
-                                       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE    &none      &trans     &trans
+&none  &kp APOS         &kp LESS_THAN  &kp GREATER_THAN      &kp DOUBLE_QUOTES      &kp DOT                    &kp AMPS   &double_colon  &kp LBKT              &kp RBKT               &kp PRCNT  &none
+&none  &kp EXCLAMATION  &kp MINUS      &kp PLUS              &kp EQUAL              &kp POUND                  &kp PIPE   &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QMARK  &none
+&none  &kp CARET        &kp FSLH       &kp STAR              &kp BSLH               &double_periodbackslash    &kp TILDE  &kp DLLR       &kp LBRC              &kp RBRC               &kp AT     &none
+                                       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp UNDERSCORE             &none      &trans         &trans
             >;
 
             label = "Sym";
