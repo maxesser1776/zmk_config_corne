@@ -20,7 +20,9 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             flavor = "balanced";
+
             // retro-tap;
+
             quick-tap-ms = <125>;
 
             // global-quick-tap;
@@ -177,6 +179,13 @@
             bindings = <&kp LS(LC(TAB))>;
             label = "CHROME_TAB_BACK";
         };
+
+        onecommand: onecommand {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(F1)>;
+            label = "ONECOMMAND";
+        };
     };
 
     keymap {
@@ -235,7 +244,7 @@
 
         Nav {
             bindings = <
-&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &File_Exp      &kp C_AL_CALCULATOR  &paste            &copy             &kp K_CUT        &kp K_UNDO           &trans
+&trans  &fusion_componet_colors  &mkp MB3        &mmv MOVE_UP    &msc SCRL_UP     &onecommand    &kp C_AL_CALCULATOR  &paste            &copy             &kp K_CUT        &kp K_UNDO           &trans
 &trans  &fusion_isolate          &mmv MOVE_LEFT  &mkp MB1        &mmv MOVE_RIGHT  &mkp RCLK      &kp CAPS             &kp LEFT_ARROW    &kp UP_ARROW      &kp DOWN         &kp RIGHT            &trans
 &trans  &fusion_unisolate        &protonmail     &mmv MOVE_DOWN  &msc SCRL_DOWN   &quake_mode    &task_manager        &chrome_tab_back  &chrome_back      &chrome_forward  &chrome_tab_forward  &trans
                                                  &trans          &trans           &trans         &trans               &trans            &kp LC(LEFT_GUI)
