@@ -182,14 +182,14 @@
             label = "ONECOMMAND";
         };
 
-        switch_desktop_keft: switch_desktop_keft {
+        desktop_left: switch_desktop_keft {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LEFT)>;
             label = "SWITCH_DESKTOP_KEFT";
         };
 
-        switch_desktop_right: switch_desktop_right {
+        desktop_right: switch_desktop_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(RIGHT)>;
@@ -225,10 +225,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp LEFT_BRACKET  &kp N7  &kp N8     &kp N9     &kp RIGHT_BRACKET    &trans   &trans                &trans                 &trans  &trans  &none
-&none  &kp SEMICOLON     &kp N4  &kp N5     &kp N6     &kp EQUAL            &trans   &switch_desktop_keft  &switch_desktop_right  &trans  &trans  &none
-&none  &kp N0            &kp N1  &kp N2     &kp N3     &kp BACKSLASH        &trans   &trans                &trans                 &trans  &trans  &none
-                                 &kp EQUAL  &kp GRAVE  &none                &kp DEL  &trans                &trans
+&none  &kp LEFT_BRACKET  &kp N7  &kp N8     &kp N9     &kp RIGHT_BRACKET    &trans   &trans         &trans          &trans  &trans  &none
+&none  &kp SEMICOLON     &kp N4  &kp N5     &kp N6     &kp EQUAL            &trans   &desktop_left  &desktop_right  &trans  &trans  &none
+&none  &kp N0            &kp N1  &kp N2     &kp N3     &kp BACKSLASH        &trans   &trans         &trans          &trans  &trans  &none
+                                 &kp EQUAL  &kp GRAVE  &none                &kp DEL  &trans         &trans
             >;
 
             label = "Num";
