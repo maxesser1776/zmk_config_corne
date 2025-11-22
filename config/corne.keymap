@@ -185,14 +185,14 @@
         desktop_left: switch_desktop_keft {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(LEFT)>;
+            bindings = <&kp LG(LC(LEFT))>;
             label = "SWITCH_DESKTOP_KEFT";
         };
 
         desktop_right: switch_desktop_right {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LG(RIGHT)>;
+            bindings = <&kp LG(LC(RIGHT))>;
             label = "SWITCH_DESKTOP_RIGHT";
         };
     };
