@@ -22,6 +22,7 @@
             flavor = "balanced";
             // retro-tap;
             quick-tap-ms = <175>; 
+            hold-preferred-when-alone;
             // global-quick-tap; 
             bindings = <&kp>, <&kp>;
         };
