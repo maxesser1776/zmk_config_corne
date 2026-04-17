@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(unzip -p \"logs_64990637826 \\(1\\).zip\" \"build _ Build \\(nice_nano_v2, corne_left nice_view_adapter nice_view\\)/13_West Build \\(corne_left nice_view_adapter nice_view - nice_nano_v2\\).txt\")",
+      "Bash(unzip *)"
+    ]
+  }
+}
