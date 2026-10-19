@@ -4,3 +4,6 @@ package-lock.json
 package.json
 AGENTS.md
 logs/
+node_modules/
+.codex
+.claude/settings.local.json
