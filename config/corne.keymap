@@ -251,7 +251,8 @@
         };
 
         // Hold: Alt stays down and the switcher opens; tap Tab (Nav N) to
-        // cycle; release to pick. Quick tap = jump to the last window.
+        // cycle (or use the arrows); release to pick. Quick tap = last window.
+        // Lives on Nav X (left ring finger) so the right hand is free.
         alt_tab: alt_tab {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -321,13 +322,13 @@
         nav_layer {
             display-name = "Nav";
             // | Alt |MidCl|Mse^ |Scrl^|C+Sft|   |Redo |Paste|Copy | Cut |Undo |
-            // | Sft |Mse< |LClk |Mse> |RClk |   |AltTb|  <  |  ^  |  v  |  >  |
-            // | Ctl |Prton|Msev |Scrlv| Win |   | Tab |Desk<|Desk>|Back | Fwd |
+            // | Sft |Mse< |LClk |Mse> |RClk |   |Prton|  <  |  ^  |  v  |  >  |
+            // | Ctl |AltTb|Msev |Scrlv| Win |   | Tab |Desk<|Desk>|Back | Fwd |
             //       |     |  (held)  |     |   |Home | End |Ctl+Win|
             bindings = <
 &kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO
-&kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &alt_tab       &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
-&kp LCTRL        &protonmail      &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
+&kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &protonmail    &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
+&kp LCTRL        &alt_tab         &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
                                          &trans           &trans           &trans             &kp HOME       &kp END             &kp LC(LEFT_GUI)
             >;
         };
