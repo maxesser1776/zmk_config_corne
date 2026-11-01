@@ -324,12 +324,12 @@
             // | Alt |MidCl|Mse^ |Scrl^|C+Sft|   |Redo |Paste|Copy | Cut |Undo |
             // | Sft |Mse< |LClk |Mse> |RClk |   |Prton|  <  |  ^  |  v  |  >  |
             // | Ctl |AltTb|Msev |Scrlv| Win |   | Tab |Desk<|Desk>|Back | Fwd |
-            //       |     |  (held)  |     |   |Home | End |Ctl+Win|
+            //       |     |  (held)  |     |   |Home | End |AltF4|
             bindings = <
 &kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO
 &kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &protonmail    &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
 &kp LCTRL        &alt_tab         &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
-                                         &trans           &trans           &trans             &kp HOME       &kp END             &kp LC(LEFT_GUI)
+                                         &trans           &trans           &trans             &kp HOME       &kp END             &kp LA(F4)
             >;
         };
 
