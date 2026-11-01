@@ -297,13 +297,13 @@
             display-name = "Num/CAD";
             // Held mode: everything on fingers. Hold Alt (R) + digit = numpad key.
             // |  7  |  8  |  9  | Alt |  .  |   |  `  | KP/ | KP* | KP+ |     |
-            // |  4  |  5  |  6  | Sft |  0  |   | Del |     |     |     |     |
-            // |  1  |  2  |  3  | Ctl | Ent |   |     |     |     |     |     |
+            // |  4  |  5  |  6  | Sft |  0  |   | Del |     |PgUp |     |     |
+            // |  1  |  2  |  3  | Ctl | Ent |   |     |     |PgDn |     |     |
             //       | KP- |  Bksp  | Esc |   (thumbs only when locked)
             bindings = <
 &n7              &n8              &n9            &kp LALT           &ndot              &kp GRAVE      &kp KP_DIVIDE       &kp KP_MULTIPLY &kp KP_PLUS       &trans
-&n4              &n5              &n6            &kp LSHFT          &n0                &kp DELETE     &trans              &trans          &trans            &trans
-&n1              &n2              &n3            &kp LCTRL          &kp ENTER          &trans         &trans              &trans          &trans            &trans
+&n4              &n5              &n6            &kp LSHFT          &n0                &kp DELETE     &trans              &kp PG_UP       &trans            &trans
+&n1              &n2              &n3            &kp LCTRL          &kp ENTER          &trans         &trans              &kp PG_DN       &trans            &trans
                                          &kp KP_MINUS   &kp BACKSPACE      &kp ESCAPE         &trans         &trans              &trans
             >;
         };
@@ -311,7 +311,7 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-&kp APOS         &kp LESS_THAN    &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp DOT                  &kp AMPS   &double_colon  &kp LBKT              &kp RBKT               &kp PRCNT
+&kp APOS         &kp LESS_THAN    &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp GRAVE                &kp AMPS   &double_colon  &kp LBKT              &kp RBKT               &kp PRCNT
 &kp EXCLAMATION  &kp MINUS        &kp PLUS          &kp EQUAL          &kp POUND                &kp PIPE   &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QMARK
 &kp CARET        &kp FSLH         &kp STAR          &kp BSLH           &double_periodbackslash  &kp TILDE  &kp DLLR       &kp LBRC              &kp RBRC               &kp AT
                                          &trans            &kp SEMICOLON      &kp UNDERSCORE           &none      &trans         &trans
@@ -323,12 +323,12 @@
             // | Alt |MidCl|Mse^ |Scrl^|C+Sft|   |Redo |Paste|Copy | Cut |Undo |
             // | Sft |Mse< |LClk |Mse> |RClk |   |AltTb|  <  |  ^  |  v  |  >  |
             // | Ctl |Prton|Msev |Scrlv| Win |   | Tab |Desk<|Desk>|Back | Fwd |
-            //       |     |  (held)  |     |   |PgUp |PgDn |Ctl+Win|
+            //       |     |  (held)  |     |   |Home | End |Ctl+Win|
             bindings = <
 &kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO
 &kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &alt_tab       &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
 &kp LCTRL        &protonmail      &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
-                                         &trans           &trans           &trans             &kp PG_UP      &kp PG_DN           &kp LC(LEFT_GUI)
+                                         &trans           &trans           &trans             &kp HOME       &kp END             &kp LC(LEFT_GUI)
             >;
         };
 
