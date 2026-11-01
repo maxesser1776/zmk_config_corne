@@ -24,24 +24,28 @@ No unit tests — a successful `west build` of both halves is the verification s
 
 ## Keymap architecture (`config/corne.keymap`)
 
-Single devicetree source. Layer order is load-bearing — indices are referenced numerically by `&lt`, `&tog_on`, `&tog_off`, and combos:
+Single devicetree source. Layer indices are `#define`d at the top (`BASE CADM NUM SYM NAV MEDIA FUN`); always use the names, never raw numbers. Order is still load-bearing because ZMK resolves `&trans` downward and combos check the highest active layer.
 
-| idx | label | role |
-|-----|-------|------|
-| 0 | Base  | alphas with homerow mods |
-| 1 | Num   | numbers/brackets (layer-lockable via combo) |
-| 2 | Sym   | symbols |
-| 3 | Nav   | arrows, mouse (`mmv`/`msc`/`mkp`), app macros |
-| 4 | Media | transport, BT select/clear, `sys_reset` |
-| 5 | Fun   | F-keys, BT profile select, `bootloader` |
-
-Reordering layers silently breaks every `&lt N`, combo, and `tog_on/off` reference. If you move layers, grep numeric layer refs and update them together.
+| idx | name | label | role |
+|-----|------|-------|------|
+| 0 | BASE  | Base    | QWERTY alphas with homerow mods; Esc is the Q+W combo |
+| 1 | CADM  | CAD     | Toggle (Fun G). Overlays S/D/F/Z with instant `hmc` mods for one-handed CAD chords |
+| 2 | NUM   | Num/CAD | Hold Tab (`lt_num`) or toggle Tab+Enter. Numpad on QWE/ASD/ZXC, plain Alt/Shift/Ctrl on R/F/V |
+| 3 | SYM   | Sym     | Symbols; hold left outer thumb (`&mo`) or Enter |
+| 4 | NAV   | Nav     | Mouse keys + real mods (left), arrows, Alt+Tab, desktop sweep, PgUp/PgDn (right) |
+| 5 | MEDIA | Media   | Home-row media, BT disconnect, `sys_reset` |
+| 6 | FUN   | Fun     | F-keys, BT select/clear, `bootloader` (both halves), CAD-mode toggle. Hold " or the ' + Tab combo |
 
 Custom behaviors:
-- `hml` / `hmr` — positional homerow mods for the left/right hand (hold-tap, `tap-preferred`, `tapping-term-ms=220`, `quick-tap-ms=175`, `require-prior-idle-ms=160`, `hold-trigger-on-release`). Each sets `hold-trigger-key-positions` to the opposite hand plus thumbs, so same-hand rolls stay taps. `hml` is on S/D/F/Z, `hmr` on K/L; J is a plain `&mt RIGHT_SHIFT J` (hold-preferred, no positional guard) by choice.
-- `tog_on` / `tog_off` — one-way toggle-layer variants. Combo at `key-positions <38 39>` locks Num on; `<38 37>` unlocks.
+- `hml` / `hmr`: positional homerow mods (tap-preferred, 220 ms, quick-tap 175, prior-idle 160, hold-trigger-on-release). Each sets `hold-trigger-key-positions` to the opposite hand plus thumbs, so same-hand rolls stay taps. `hml` on S/D/F/Z, `hmr` on J/K/L.
+- `hmc`: CAD-mode mods, hold-preferred, no positional guard, so same-hand chords (Shift+A, Ctrl+R) fire immediately. Only on the CADM layer.
+- `lt_num`: hold-preferred layer-tap for the Tab thumb, so Num/CAD activates as soon as another key is pressed.
+- `n0`-`n9`, `ndot`: mod-morphs. Number-row digit normally, numpad keycode while Alt is held (Alt is masked; Ctrl passes through), for Blender views.
+- `alt_tab` macro: press Alt, tap Tab, hold until release.
 
-Macros wrap Windows-flavored OS shortcuts (`win_lock = LG(L)`, `task_manager = LS(LC(ESC))`, Chrome/Fusion/Proton bindings). Keep macro `label` values short uppercase to match style.
+Combos: Q+W Esc, Z+X undo, X+C copy, C+V paste, X+C+V cut, F+J caps word (all `layers = <BASE CADM>`, `require-prior-idle-ms = 125`); ' + Tab holds Fun; Tab + Enter toggles Num/CAD. Combo `layers` is checked against the highest active layer.
+
+Macros wrap Windows-flavored OS shortcuts (`win_lock = LG(L)`, `task_manager = LS(LC(ESC))`, Fusion/Proton bindings). Keep macro `label` values short uppercase to match style.
 
 Pointing is enabled (`CONFIG_ZMK_POINTING=y`); move/scroll defaults are overridden via `ZMK_POINTING_DEFAULT_MOVE_VAL` / `ZMK_POINTING_DEFAULT_SCRL_VAL` `#define`d *before* the pointing header is included.
 
