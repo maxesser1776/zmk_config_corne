@@ -33,8 +33,8 @@ Single devicetree source. Layer indices are `#define`d at the top (`BASE CADM NU
 | 2 | NUM   | Num/CAD | Hold Tab (`lt_num`) or toggle Tab+Enter. Numpad on QWE/ASD/ZXC, plain Alt/Shift/Ctrl on R/F/V; PgUp/PgDn on K/comma |
 | 3 | SYM   | Sym     | Symbols; hold left outer thumb (`&mo`) or Enter |
 | 4 | NAV   | Nav     | Mouse keys + real mods (left), arrows, Alt+Tab, desktop sweep, Home/End + Alt+F4 on right thumbs |
-| 5 | MEDIA | Media   | Home-row media, BT disconnect, `sys_reset` |
-| 6 | FUN   | Fun     | F-keys, BT select/clear, `bootloader` (both halves), CAD-mode toggle. Hold " or the ' + Tab combo |
+| 5 | MEDIA | Media   | Home-row media, BT disconnect, `sys_reset`; BT clear on the Enter thumb (unreachable by the Space thumb that holds Media, so only pressed deliberately with another finger) |
+| 6 | FUN   | Fun     | F-keys, BT select, `bootloader` (both halves), CAD-mode toggle. Hold " or the ' + Tab combo |
 
 Custom behaviors:
 - `hml` / `hmr`: positional homerow mods (tap-preferred, 220 ms, quick-tap 175, prior-idle 160, hold-trigger-on-release). Each sets `hold-trigger-key-positions` to the opposite hand plus thumbs, so same-hand rolls stay taps. `hml` on S/D/F/Z, `hmr` on J/K/L.

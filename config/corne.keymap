@@ -361,7 +361,7 @@
 &trans           &kp C_PREV       &kp C_NEXT        &trans              &trans             &trans  &trans  &trans  &trans  &trans
 &kp C_MUTE       &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &kp C_PP            &trans             &trans  &trans  &trans  &trans  &trans
 &sys_reset       &bt BT_DISC 0    &trans            &trans              &kp C_AL_CALCULATOR &trans &trans  &trans  &trans  &sys_reset
-                                         &kp C_MUTE        &kp C_PP            &kp C_STOP         &trans  &trans  &trans
+                                         &kp C_MUTE        &kp C_PP            &kp C_STOP         &bt BT_CLR  &trans  &trans
             >;
         };
 
@@ -371,7 +371,7 @@
             bindings = <
 &kp F12          &kp F7           &kp F8           &kp F9           &kp PRINTSCREEN    &kp LG(LS(S))           &File_Exp          &quake_mode         &task_manager  &bootloader
 &kp F11          &kp F4           &kp F5           &kp F6           &tog CADM          &bt BT_SEL 0            &bt BT_SEL 1       &bt BT_SEL 2        &bt BT_SEL 3   &bt BT_SEL 4
-&kp F10          &kp F1           &kp F2           &kp F3           &kp PAUSE_BREAK    &fusion_componet_colors &fusion_isolate    &fusion_unisolate   &win_lock      &bt BT_CLR
+&kp F10          &kp F1           &kp F2           &kp F3           &kp PAUSE_BREAK    &fusion_componet_colors &fusion_isolate    &fusion_unisolate   &win_lock      &none     
                                          &bootloader      &trans           &trans             &bootloader             &trans             &trans
             >;
         };
