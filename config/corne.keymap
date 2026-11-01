@@ -170,6 +170,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(L)>;
             label = "WIN_SLEEP";
+            display-name = "Lock";
         };
 
         task_manager: task_manager {
@@ -177,6 +178,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(LC(ESCAPE))>;
             label = "TASK_MANAGER";
+            display-name = "Task Mgr";
         };
 
         File_Exp: File_Exp {
@@ -184,6 +186,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(E)>;
             label = "FILE_EXP";
+            display-name = "Explorer";
         };
 
         copy: copy {
@@ -191,6 +194,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(C)>;
             label = "COPY";
+            display-name = "Copy";
         };
 
         paste: paste {
@@ -198,6 +202,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(V)>;
             label = "PASTE";
+            display-name = "Paste";
         };
 
         double_periodbackslash: double_periodbackslash {
@@ -205,6 +210,7 @@
             #binding-cells = <0>;
             bindings = <&kp DOT &kp DOT &kp FSLH>;
             label = "DOUBLE_PERIODBACKSLASH";
+            display-name = "../";
         };
 
         double_colon: double_colon {
@@ -212,6 +218,7 @@
             #binding-cells = <0>;
             bindings = <&kp COLON &kp COLON>;
             label = "DOUBLE_COLON";
+            display-name = "::";
         };
 
         quake_mode: quake_mode {
@@ -219,6 +226,7 @@
             #binding-cells = <0>;
             bindings = <&kp LG(GRAVE)>;
             label = "QUAKE_MODE";
+            display-name = "Quake";
         };
 
         fusion_isolate: fusion_isolate {
@@ -226,6 +234,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LS(V))>;
             label = "FUSION_ISOLATE";
+            display-name = "Isolate";
         };
 
         fusion_componet_colors: fusion_componet_colors {
@@ -233,6 +242,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(N)>;
             label = "FUSION_COMPONET_COLORS";
+            display-name = "Colors";
         };
 
         fusion_unisolate: fusion_unisolate {
@@ -240,6 +250,7 @@
             #binding-cells = <0>;
             bindings = <&kp LS(V)>;
             label = "FUSION_UNISOLATE";
+            display-name = "Unisolate";
         };
 
         protonmail: protonmail {
@@ -247,6 +258,7 @@
             #binding-cells = <0>;
             bindings = <&kp LC(LA(O))>;
             label = "PROTONMAIL";
+            display-name = "Proton";
             wait-ms = <15>;
         };
 
@@ -263,6 +275,16 @@
                 , <&macro_release &kp LALT>
                 ;
             label = "ALT_TAB";
+            display-name = "Switch";
+        };
+
+        // Alt+F4, named so KeyPeek shows "Close".
+        close_win: close_win {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(F4)>;
+            label = "CLOSE_WIN";
+            display-name = "Close";
         };
     };
 
@@ -329,7 +351,7 @@
 &kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO
 &kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &protonmail    &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
 &kp LCTRL        &alt_tab         &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
-                                         &trans           &trans           &trans             &kp HOME       &kp END             &kp LA(F4)
+                                         &trans           &trans           &trans             &kp HOME       &kp END             &close_win
             >;
         };
 
