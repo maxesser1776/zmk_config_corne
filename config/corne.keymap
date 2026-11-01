@@ -3,14 +3,14 @@
  *
  * SPDX-License-Identifier: MIT
  *
- * beekeeb Chocofi (36 keys) using the Corne shield. Positions 0, 11, 12, 23,
- * 24 and 35 are Corne keys that do not exist on the Chocofi: keep them &none.
+ * beekeeb Chocofi (36 keys) using the Corne shield with its built-in
+ * 5-column physical layout (chosen below), so there are no dummy outer keys.
  *
  * Position grid:
- *    1  2  3  4  5   |   6  7  8  9 10
- *   13 14 15 16 17   |  18 19 20 21 22
- *   25 26 27 28 29   |  30 31 32 33 34
- *         36 37 38   |  39 40 41
+ *    0  1  2  3  4   |   5  6  7  8  9
+ *   10 11 12 13 14   |  15 16 17 18 19
+ *   20 21 22 23 24   |  25 26 27 28 29
+ *         30 31 32   |  33 34 35
  */
 
 #define ZMK_POINTING_DEFAULT_MOVE_VAL 850  // default: 600
@@ -41,6 +41,10 @@
     };
 
 / {
+    chosen {
+        zmk,physical-layout = &foostan_corne_5col_layout;
+    };
+
     behaviors {
         hml: homerow_mods_left {
             compatible = "zmk,behavior-hold-tap";
@@ -50,7 +54,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <160>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 36 37 38 39 40 41>;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33 34 35>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -62,7 +66,7 @@
             quick-tap-ms = <175>;
             require-prior-idle-ms = <160>;
             hold-trigger-on-release;
-            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 35>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -106,42 +110,42 @@
         // Letter combos: Base and CAD mode only, and not mid-typing-burst.
         combo_esc {
             bindings = <&kp ESCAPE>;
-            key-positions = <1 2>;           // Q + W
+            key-positions = <0 1>;           // Q + W
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
 
         combo_undo {
             bindings = <&kp LC(Z)>;
-            key-positions = <25 26>;         // Z + X
+            key-positions = <20 21>;         // Z + X
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
 
         combo_copy {
             bindings = <&kp LC(C)>;
-            key-positions = <26 27>;         // X + C
+            key-positions = <21 22>;         // X + C
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
 
         combo_paste {
             bindings = <&kp LC(V)>;
-            key-positions = <27 28>;         // C + V
+            key-positions = <22 23>;         // C + V
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
 
         combo_cut {
             bindings = <&kp LC(X)>;
-            key-positions = <26 27 28>;      // X + C + V
+            key-positions = <21 22 23>;      // X + C + V
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
 
         combo_caps_word {
             bindings = <&caps_word>;
-            key-positions = <16 19>;         // F + J
+            key-positions = <13 16>;         // F + J
             layers = <BASE CADM>;
             require-prior-idle-ms = <125>;
         };
@@ -149,12 +153,12 @@
         // Thumb combos: every layer.
         combo_fun {
             bindings = <&mo FUN>;
-            key-positions = <37 38>;         // ' + Tab, hold for Fun
+            key-positions = <31 32>;         // ' + Tab, hold for Fun
         };
 
         combo_num_toggle {
             bindings = <&tog NUM>;
-            key-positions = <38 39>;         // Tab + Enter: Num/CAD on/off
+            key-positions = <32 33>;         // Tab + Enter: Num/CAD on/off
         };
     };
 
@@ -271,9 +275,9 @@
             // |Z/Win|  X  |  C  |  V  |  B  |   |  N  |  M  |  ,  |  .  |  /  |
             //       | Sym | '/Nav |Tab/Num|   |Ent/Sym|Spc/Media|"/Fun|
             bindings = <
-&none  &kp Q            &kp W            &kp E          &kp R              &kp T              &kp Y          &kp U               &kp I           &kp O             &kp P          &none
-&none  &kp A            &hml LALT S      &hml LCTRL D   &hml LSHFT F       &kp G              &kp H          &hmr RSHFT J        &hmr RCTRL K    &hmr RALT L       &kp BACKSPACE  &none
-&none  &hml LGUI Z      &kp X            &kp C          &kp V              &kp B              &kp N          &kp M               &kp COMMA       &kp DOT           &kp FSLH       &none
+&kp Q            &kp W            &kp E          &kp R              &kp T              &kp Y          &kp U               &kp I           &kp O             &kp P
+&kp A            &hml LALT S      &hml LCTRL D   &hml LSHFT F       &kp G              &kp H          &hmr RSHFT J        &hmr RCTRL K    &hmr RALT L       &kp BACKSPACE
+&hml LGUI Z      &kp X            &kp C          &kp V              &kp B              &kp N          &kp M               &kp COMMA       &kp DOT           &kp FSLH
                                          &mo SYM        &lt NAV SQT        &lt_num NUM TAB    &lt SYM ENTER  &lt MEDIA SPACE     &lt FUN DOUBLE_QUOTES
             >;
         };
@@ -282,9 +286,9 @@
             display-name = "CAD";
             // Toggled from Fun (G). Same letters; S/D/F/Z mods fire instantly.
             bindings = <
-&none  &trans           &trans           &trans         &trans             &trans             &trans         &trans              &trans          &trans            &trans         &none
-&none  &trans           &hmc LALT S      &hmc LCTRL D   &hmc LSHFT F       &trans             &trans         &trans              &trans          &trans            &trans         &none
-&none  &hmc LGUI Z      &trans           &trans         &trans             &trans             &trans         &trans              &trans          &trans            &trans         &none
+&trans           &trans           &trans         &trans             &trans             &trans         &trans              &trans          &trans            &trans
+&trans           &hmc LALT S      &hmc LCTRL D   &hmc LSHFT F       &trans             &trans         &trans              &trans          &trans            &trans
+&hmc LGUI Z      &trans           &trans         &trans             &trans             &trans         &trans              &trans          &trans            &trans
                                          &trans         &trans             &trans             &trans         &trans              &trans
             >;
         };
@@ -297,9 +301,9 @@
             // |  1  |  2  |  3  | Ctl | Ent |   |     |     |     |     |     |
             //       | KP- |  Bksp  | Esc |   (thumbs only when locked)
             bindings = <
-&none  &n7              &n8              &n9            &kp LALT           &ndot              &kp GRAVE      &kp KP_DIVIDE       &kp KP_MULTIPLY &kp KP_PLUS       &trans         &none
-&none  &n4              &n5              &n6            &kp LSHFT          &n0                &kp DELETE     &trans              &trans          &trans            &trans         &none
-&none  &n1              &n2              &n3            &kp LCTRL          &kp ENTER          &trans         &trans              &trans          &trans            &trans         &none
+&n7              &n8              &n9            &kp LALT           &ndot              &kp GRAVE      &kp KP_DIVIDE       &kp KP_MULTIPLY &kp KP_PLUS       &trans
+&n4              &n5              &n6            &kp LSHFT          &n0                &kp DELETE     &trans              &trans          &trans            &trans
+&n1              &n2              &n3            &kp LCTRL          &kp ENTER          &trans         &trans              &trans          &trans            &trans
                                          &kp KP_MINUS   &kp BACKSPACE      &kp ESCAPE         &trans         &trans              &trans
             >;
         };
@@ -307,9 +311,9 @@
         sym_layer {
             display-name = "Sym";
             bindings = <
-&none  &kp APOS         &kp LESS_THAN    &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp DOT                  &kp AMPS   &double_colon  &kp LBKT              &kp RBKT               &kp PRCNT  &none
-&none  &kp EXCLAMATION  &kp MINUS        &kp PLUS          &kp EQUAL          &kp POUND                &kp PIPE   &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QMARK  &none
-&none  &kp CARET        &kp FSLH         &kp STAR          &kp BSLH           &double_periodbackslash  &kp TILDE  &kp DLLR       &kp LBRC              &kp RBRC               &kp AT     &none
+&kp APOS         &kp LESS_THAN    &kp GREATER_THAN  &kp DOUBLE_QUOTES  &kp DOT                  &kp AMPS   &double_colon  &kp LBKT              &kp RBKT               &kp PRCNT
+&kp EXCLAMATION  &kp MINUS        &kp PLUS          &kp EQUAL          &kp POUND                &kp PIPE   &kp COLON      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QMARK
+&kp CARET        &kp FSLH         &kp STAR          &kp BSLH           &double_periodbackslash  &kp TILDE  &kp DLLR       &kp LBRC              &kp RBRC               &kp AT
                                          &trans            &kp SEMICOLON      &kp UNDERSCORE           &none      &trans         &trans
             >;
         };
@@ -321,9 +325,9 @@
             // | Ctl |Prton|Msev |Scrlv| Win |   | Tab |Desk<|Desk>|Back | Fwd |
             //       |     |  (held)  |     |   |PgUp |PgDn |Ctl+Win|
             bindings = <
-&none  &kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO     &none
-&none  &kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &alt_tab       &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT      &none
-&none  &kp LCTRL        &protonmail      &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)  &none
+&kp LALT         &mkp MB3         &mmv MOVE_UP     &msc SCRL_UP     &kp LS(LCTRL)      &kp LC(Y)      &paste              &copy           &kp K_CUT         &kp K_UNDO
+&kp LSHFT        &mmv MOVE_LEFT   &mkp MB1         &mmv MOVE_RIGHT  &mkp RCLK          &alt_tab       &kp LEFT_ARROW      &kp UP_ARROW    &kp DOWN          &kp RIGHT
+&kp LCTRL        &protonmail      &mmv MOVE_DOWN   &msc SCRL_DOWN   &kp LGUI           &kp TAB        &kp LG(LC(LEFT))    &kp LG(LC(RIGHT)) &kp LA(LEFT)    &kp LA(RIGHT)
                                          &trans           &trans           &trans             &kp PG_UP      &kp PG_DN           &kp LC(LEFT_GUI)
             >;
         };
@@ -331,9 +335,9 @@
         media_layer {
             display-name = "Media";
             bindings = <
-&none  &trans           &kp C_PREV       &kp C_NEXT        &trans              &trans             &trans  &trans  &trans  &trans  &trans      &none
-&none  &kp C_MUTE       &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &kp C_PP            &trans             &trans  &trans  &trans  &trans  &trans      &none
-&none  &sys_reset       &bt BT_DISC 0    &trans            &trans              &kp C_AL_CALCULATOR &trans &trans  &trans  &trans  &sys_reset  &none
+&trans           &kp C_PREV       &kp C_NEXT        &trans              &trans             &trans  &trans  &trans  &trans  &trans
+&kp C_MUTE       &kp C_VOLUME_DOWN &kp C_VOLUME_UP  &kp C_PP            &trans             &trans  &trans  &trans  &trans  &trans
+&sys_reset       &bt BT_DISC 0    &trans            &trans              &kp C_AL_CALCULATOR &trans &trans  &trans  &trans  &sys_reset
                                          &kp C_MUTE        &kp C_PP            &kp C_STOP         &trans  &trans  &trans
             >;
         };
@@ -342,9 +346,9 @@
             display-name = "Fun";
             // Hold " (right outer thumb), or hold ' + Tab together (left thumb).
             bindings = <
-&none  &kp F12          &kp F7           &kp F8           &kp F9           &kp PRINTSCREEN    &kp LG(LS(S))           &File_Exp          &quake_mode         &task_manager  &bootloader  &none
-&none  &kp F11          &kp F4           &kp F5           &kp F6           &tog CADM          &bt BT_SEL 0            &bt BT_SEL 1       &bt BT_SEL 2        &bt BT_SEL 3   &bt BT_SEL 4 &none
-&none  &kp F10          &kp F1           &kp F2           &kp F3           &kp PAUSE_BREAK    &fusion_componet_colors &fusion_isolate    &fusion_unisolate   &win_lock      &bt BT_CLR   &none
+&kp F12          &kp F7           &kp F8           &kp F9           &kp PRINTSCREEN    &kp LG(LS(S))           &File_Exp          &quake_mode         &task_manager  &bootloader
+&kp F11          &kp F4           &kp F5           &kp F6           &tog CADM          &bt BT_SEL 0            &bt BT_SEL 1       &bt BT_SEL 2        &bt BT_SEL 3   &bt BT_SEL 4
+&kp F10          &kp F1           &kp F2           &kp F3           &kp PAUSE_BREAK    &fusion_componet_colors &fusion_isolate    &fusion_unisolate   &win_lock      &bt BT_CLR
                                          &bootloader      &trans           &trans             &bootloader             &trans             &trans
             >;
         };
