@@ -70,6 +70,34 @@
             bindings = <&kp>, <&kp>;
         };
 
+        // Shift keys (F / J): balanced, so Shift engages as soon as another
+        // key is pressed AND released while held (fast capitals, no 220 ms
+        // wait). Shorter prior-idle (100 ms) so sentence-start capitals work
+        // right after Space. Positional guard kept: same-hand rolls stay taps.
+        hsl: homerow_shift_left {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "balanced";
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 25 26 27 28 29 30 31 32 33 34 35>;
+            bindings = <&kp>, <&kp>;
+        };
+
+        hsr: homerow_shift_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <220>;
+            flavor = "balanced";
+            quick-tap-ms = <175>;
+            require-prior-idle-ms = <100>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32 33 34 35>;
+            bindings = <&kp>, <&kp>;
+        };
+
         // CAD mode mods: become the modifier as soon as any other key goes
         // down, even on the same hand (Blender Shift+A, Ctrl+R, ...).
         hmc: homerow_mods_cad {
@@ -299,7 +327,7 @@
             //       | Sym | '/Nav |Tab/Num|   |Ent/Sym|Spc/Media|"/Fun|
             bindings = <
 &kp Q            &kp W            &kp E          &kp R              &kp T              &kp Y          &kp U               &kp I           &kp O             &kp P
-&kp A            &hml LALT S      &hml LCTRL D   &hml LSHFT F       &kp G              &kp H          &hmr RSHFT J        &hmr RCTRL K    &hmr RALT L       &kp BACKSPACE
+&kp A            &hml LALT S      &hml LCTRL D   &hsl LSHFT F       &kp G              &kp H          &hsr RSHFT J        &hmr RCTRL K    &hmr RALT L       &kp BACKSPACE
 &hml LGUI Z      &kp X            &kp C          &kp V              &kp B              &kp N          &kp M               &kp COMMA       &kp DOT           &kp FSLH
                                          &mo SYM        &lt NAV SQT        &lt_num NUM TAB    &lt SYM ENTER  &lt MEDIA SPACE     &lt FUN DOUBLE_QUOTES
             >;

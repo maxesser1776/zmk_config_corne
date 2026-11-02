@@ -37,7 +37,8 @@ Single devicetree source. Layer indices are `#define`d at the top (`BASE CADM NU
 | 6 | FUN   | Fun     | F-keys, BT select, `bootloader` (both halves), CAD-mode toggle. Hold " or the ' + Tab combo |
 
 Custom behaviors:
-- `hml` / `hmr`: positional homerow mods (tap-preferred, 220 ms, quick-tap 175, prior-idle 160, hold-trigger-on-release). Each sets `hold-trigger-key-positions` to the opposite hand plus thumbs, so same-hand rolls stay taps. `hml` on S/D/F/Z, `hmr` on J/K/L.
+- `hml` / `hmr`: positional homerow mods (tap-preferred, 220 ms, quick-tap 175, prior-idle 160, hold-trigger-on-release). Each sets `hold-trigger-key-positions` to the opposite hand plus thumbs, so same-hand rolls stay taps. `hml` on S/D/Z, `hmr` on K/L.
+- `hsl` / `hsr`: the Shift keys (F / J). Same positional guard, but `balanced` flavor (Shift as soon as another key is pressed and released while held) and `require-prior-idle-ms = 100`, so capitals are fast and sentence-start capitals after Space work. Alt/Ctrl/Win keep the stricter `hml`/`hmr` tuning.
 - `hmc`: CAD-mode mods, hold-preferred, no positional guard, so same-hand chords (Shift+A, Ctrl+R) fire immediately. Only on the CADM layer.
 - `lt_num`: hold-preferred layer-tap for the Tab thumb, so Num/CAD activates as soon as another key is pressed.
 - `n0`-`n9`, `ndot`: mod-morphs. Number-row digit normally, numpad keycode while Alt is held (Alt is masked; Ctrl passes through), for Blender views.
