@@ -30,7 +30,7 @@ Single devicetree source. Layer indices are `#define`d at the top (`BASE CADM NU
 |-----|------|-------|------|
 | 0 | BASE  | Base    | QWERTY alphas with homerow mods; Esc is the Q+W combo |
 | 1 | CADM  | CAD     | Toggle (Fun G). Overlays S/D/F/Z with instant `hmc` mods for one-handed CAD chords |
-| 2 | NUM   | Num/CAD | Hold Tab (`lt_num`) or toggle Tab+Enter. Numpad on QWE/ASD/ZXC, plain Alt/Shift/Ctrl on R/F/V; PgUp/PgDn on K/comma |
+| 2 | NUM   | Num/CAD | Hold Tab (`lt_num`) or toggle Tab+Enter. Numpad 789/456/123 on WER/SDF/XCV (ring/middle/index), 0 on Z, . on B, Enter on T; plain Ctrl/Alt on Q/A (pinky), Shift on G; PgUp/PgDn on K/comma |
 | 3 | SYM   | Sym     | Symbols; hold left outer thumb (`&mo`) or Enter |
 | 4 | NAV   | Nav     | Mouse keys + real mods (left), arrows, Alt+Tab, desktop sweep, Home/End + Alt+F4 on right thumbs |
 | 5 | MEDIA | Media   | Home-row media, BT disconnect, `sys_reset`; BT clear on the Enter thumb (unreachable by the Space thumb that holds Media, so only pressed deliberately with another finger) |

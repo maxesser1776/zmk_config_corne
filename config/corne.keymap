@@ -346,15 +346,16 @@
 
         num_cad_layer {
             display-name = "Num/CAD";
-            // Held mode: everything on fingers. Hold Alt (R) + digit = numpad key.
-            // |  7  |  8  |  9  | Alt |  .  |   |  `  | KP/ | KP* | KP+ |     |
-            // |  4  |  5  |  6  | Sft |  0  |   | Del |     |PgUp |     |     |
-            // |  1  |  2  |  3  | Ctl | Ent |   |     |     |PgDn |     |     |
+            // Held mode: everything on fingers. Numpad on ring/middle/index like a
+            // real numpad, 0 under the 1. Hold Alt (A) + digit = numpad key.
+            // | Ctl |  7  |  8  |  9  | Ent |   |  `  | KP/ | KP* | KP+ |     |
+            // | Alt |  4  |  5  |  6  | Sft |   | Del |     |PgUp |     |     |
+            // |  0  |  1  |  2  |  3  |  .  |   |     |     |PgDn |     |     |
             //       | KP- |  Bksp  | Esc |   (thumbs only when locked)
             bindings = <
-&n7              &n8              &n9            &kp LALT           &ndot              &kp GRAVE      &kp KP_DIVIDE       &kp KP_MULTIPLY &kp KP_PLUS       &trans
-&n4              &n5              &n6            &kp LSHFT          &n0                &kp DELETE     &trans              &kp PG_UP       &trans            &trans
-&n1              &n2              &n3            &kp LCTRL          &kp ENTER          &trans         &trans              &kp PG_DN       &trans            &trans
+&kp LCTRL        &n7              &n8            &n9                &kp ENTER          &kp GRAVE      &kp KP_DIVIDE       &kp KP_MULTIPLY &kp KP_PLUS       &trans
+&kp LALT         &n4              &n5            &n6                &kp LSHFT          &kp DELETE     &trans              &kp PG_UP       &trans            &trans
+&n0              &n1              &n2            &n3                &ndot              &trans         &trans              &kp PG_DN       &trans            &trans
                                          &kp KP_MINUS   &kp BACKSPACE      &kp ESCAPE         &trans         &trans              &trans
             >;
         };
