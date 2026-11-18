@@ -15,9 +15,9 @@ manifest:
       import: app/west.yml
     - name: zmk-raw-hid
       remote: zzeneg
-      revision: main
+      revision: 6a37765dfab6197292e7a9f47305dcf87386d56a  # main as of 2026-08-24, tested 2026-11-18
     - name: zmk-keypeek-layer-notifier
       remote: srwi
-      revision: master
+      revision: 23a9e46287e083a66d1d6f1939f68efb1f0f5295  # master as of 2026-10-21, tested 2026-11-18
   self:
     path: config
