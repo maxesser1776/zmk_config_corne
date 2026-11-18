@@ -65,3 +65,12 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=y -DCONFIG_ZMK_STUDIO_TRANSPORT_BLE_PREF_LATENCY=30 -DCONFIG_BT_GAP_AUTO_UPDATE_CONN_PARAMS=n
     artifact-name: corne_left_keypeek_noparam
+  # Fix candidate 3: lat30 + controller without the LL Connection Parameter Request procedure.
+  # noparam (auto-update off) froze key handling and Studio on this board; this keeps the 5 s auto-update but the
+  # host falls back to the L2CAP Connection Parameter Update Request, which Windows answers with a central-initiated
+  # LE Connection Update (that path completed fine in the 2026-11-18 captures).
+  - board: nice_nano_v2
+    shield: corne_left nice_view_adapter nice_view raw_hid_adapter
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=y -DCONFIG_ZMK_STUDIO_TRANSPORT_BLE_PREF_LATENCY=30 -DCONFIG_BT_CTLR_CONN_PARAM_REQ=n
+    artifact-name: corne_left_keypeek_l2cap
