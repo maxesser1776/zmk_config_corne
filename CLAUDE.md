@@ -10,7 +10,7 @@ This is a *user config* repo consumed by upstream ZMK — it provides only the k
 
 ## Build
 
-CI is the canonical build path. `.github/workflows/build.yml` delegates to the reusable `zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0`, which reads `build.yaml`. The matrix currently produces `corne_left`, `corne_right`, and `settings_reset` on `nice_nano_v2` with `nice_view_adapter nice_view`, plus a `corne_left_debug` artifact (see Debugging). Keep `build.yaml` in sync when adding shields or snippets.
+CI is the canonical build path. `.github/workflows/build.yml` delegates to the reusable `zmkfirmware/zmk/.github/workflows/build-user-config.yml@v0.3.0`, which reads `build.yaml`. The matrix currently produces `corne_left`, `corne_right`, and `settings_reset` on `nice_nano_v2` with `nice_view_adapter nice_view`, plus `corne_left_debug` (see Debugging) and `corne_left_keypeek` (Studio + KeyPeek modules; the daily left-half firmware). Keep `build.yaml` in sync when adding shields or snippets.
 
 Local builds run from a West workspace (the checked-in `zmk-workspace/` is gitignored; bootstrap with `west init -l config && west update` if missing):
 
@@ -54,7 +54,7 @@ Pointing is enabled (`CONFIG_ZMK_POINTING=y`); move/scroll defaults are overridd
 
 Power management is intentionally tuned: `CONFIG_ZMK_IDLE_SLEEP_TIMEOUT=900000` (15 min), BLE peripheral preferred latency 30 / timeout 500 for cleaner wake-from-idle reconnects, TX power bumped via `CONFIG_BT_CTLR_TX_PWR_PLUS_4=y`.
 
-Periodic host dropouts (X on the nice_view BLE icon, keyboard dead for ~4 s every ~45 s) were traced to the laptop's Intel AX201 driver, not firmware: fixed by Intel driver 24.70.0.4 (Lenovo's 23.60.0.1 never answered the conn param request). Tightening conn params (`11528d3`, reverted) did not help. If dropouts return, check the host driver first; the untested firmware fallback is `CONFIG_BT_GAP_AUTO_UPDATE_CONN_PARAMS=n`.
+`CONFIG_BT_CTLR_CONN_PARAM_REQ=n` is required with Max's laptop (Intel AX201). Zephyr sends a connection-parameter request 5 s after every connection; the AX201 sometimes accepts the LL Connection Parameter Request but never applies it, so the keyboard dropped the link 40 s later (0x22 on the keyboard, 0x08 on the host), in bursts ~50 s apart after each reconnect. With the LL feature off, the request goes as an L2CAP Connection Parameter Update and Windows applies it. The `corne_left_keypeek` build also sets `CONFIG_ZMK_STUDIO_TRANSPORT_BLE_PREF_LATENCY=30` so Studio never requests a change. Do **not** use `CONFIG_BT_GAP_AUTO_UPDATE_CONN_PARAMS=n` (that build hung the left half). Keep the Intel driver at 24.70.0.4+ (Lenovo's 23.60.0.1 caused the original October dropouts). Full investigation: branch `keypeek-stack-experiment` and the README's Bluetooth notes.
 
 ## Debugging
 
