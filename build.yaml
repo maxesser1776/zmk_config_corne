@@ -42,3 +42,18 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=y -DCONFIG_SYSTEM_WORKQUEUE_STACK_SIZE=4096
     artifact-name: corne_left_keypeek_bigstack
+  # Experiment: KeyPeek build + USB logging, to see the keyboard's side of the drops (disconnect reason, le_param_updated).
+  # zmk-usb-logging replaces the studio-rpc-usb-uart snippet (only one snippet per build entry); Studio still works over
+  # BLE and over Raw HID. ZMK_BEHAVIORS_KEEP_ALL comes from the Studio snippet and is passed by hand here.
+  - board: nice_nano_v2
+    shield: corne_left nice_view_adapter nice_view raw_hid_adapter
+    snippet: zmk-usb-logging
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=y -DDTS_EXTRA_CPPFLAGS=-DZMK_BEHAVIORS_KEEP_ALL
+    artifact-name: corne_left_keypeek_debug
+  # Fix candidate: KeyPeek build where Studio does NOT ask the host for latency 10 while connected
+  # (ZMK only requests it when STUDIO_TRANSPORT_BLE_PREF_LATENCY < BT_PERIPHERAL_PREF_LATENCY = 30).
+  - board: nice_nano_v2
+    shield: corne_left nice_view_adapter nice_view raw_hid_adapter
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y -DCONFIG_ZMK_STUDIO_LOCKING=n -DCONFIG_ZMK_KEYPEEK_LAYER_NOTIFIER=y -DCONFIG_ZMK_STUDIO_TRANSPORT_BLE_PREF_LATENCY=30
+    artifact-name: corne_left_keypeek_lat30
