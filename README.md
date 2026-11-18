@@ -64,7 +64,9 @@ GitHub Actions builds every entry in [`build.yaml`](build.yaml) using ZMK's reus
 
 ## Keymap
 
-Source: [`config/corne.keymap`](config/corne.keymap). Reference image: [`keymaps/my_keymap.png`](keymaps/my_keymap.png).
+Source: [`config/corne.keymap`](config/corne.keymap).
+
+![Chocofi full keymap: every layer, combos and workflow cheat sheets](keymaps/keymap.png)
 
 Key positions run `0`–`35` (5 columns per side), and combos use these numbers:
 
@@ -101,6 +103,15 @@ Key positions run `0`–`35` (5 columns per side), and combos use these numbers:
 | Tab + Enter | Toggle Num/CAD (any layer) |
 
 Letter combos need a short pause before them (`require-prior-idle-ms`), so fast typing doesn't trigger them.
+
+### Updating the keymap image
+
+[`keymaps/keymap.png`](keymaps/keymap.png) is rendered from [`keymaps/keymap_poster.py`](keymaps/keymap_poster.py), which also writes an HTML version ([`keymaps/keymap.html`](keymaps/keymap.html)). The layer data in the script is maintained by hand, so update it whenever `config/corne.keymap` changes, then re-render:
+
+```sh
+pip install playwright pillow && playwright install chromium   # first time only
+python keymaps/keymap_poster.py --png
+```
 
 ## KeyPeek overlay
 
@@ -180,7 +191,7 @@ config/
   corne.conf                  Kconfig: power, Bluetooth, pointing
   west.yml                    Manifest: ZMK v0.3.0 + KeyPeek modules (pinned)
   backups/                    Old keymap snapshots
-keymaps/                      Reference images of the layout (manual renders)
+keymaps/                      Keymap poster (PNG + HTML) and the script that renders it
 boards/shields/               Reserved for custom shields
 zephyr/module.yml             Makes this repo a Zephyr module (board_root)
 CLAUDE.md                     Notes for AI coding assistants
@@ -191,7 +202,7 @@ CLAUDE.md                     Notes for AI coding assistants
 - ZMK and both modules are **pinned**. Tracking ZMK `main` caused left-half wake failures and poor battery. Update deliberately, and keep the `west.yml` revision and the workflow ref in sync.
 - Experiments go on short-lived branches. CI builds every push, so test the artifact and merge when it's good.
 - Layers are referenced by their `#define` names (`BASE`, `NUM`, …), never raw numbers. Layer order matters for `&trans` and combos.
-- Update `keymaps/my_keymap.png` by hand when user-facing layout changes ship.
+- Update and re-render the keymap image when user-facing layout changes ship (see [Updating the keymap image](#updating-the-keymap-image)).
 
 ## Acknowledgements
 

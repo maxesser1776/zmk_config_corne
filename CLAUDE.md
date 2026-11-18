@@ -62,7 +62,7 @@ Do not put `CONFIG_ZMK_USB_LOGGING=y` in `corne.conf` — it fails on nice_nano_
 
 ## Documentation images
 
-`keymaps/my_keymap_*.png` are manual reference renders, not build output. Update them by hand when user-facing layer changes ship.
+`keymaps/keymap.png` (and `keymaps/keymap.html`) are rendered by `keymaps/keymap_poster.py --png`. The script's `LAYERS`, `COMBOS` and `CHEATS` data are maintained by hand: when user-facing keymap changes ship, update them to match `config/corne.keymap` (including the workflow cheat sheets) and re-render.
 
 ## Layout
 
